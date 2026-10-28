@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8a4f6d1fd5f16bb47bab24d45c51de62
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Demos/Summer and Winter/TriggerEnter.cs
+  uploadId: 635072

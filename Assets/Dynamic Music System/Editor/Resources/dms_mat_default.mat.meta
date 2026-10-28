@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 351b756273561bc45841ae1870d30c15
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/Resources/dms_mat_default.mat
+  uploadId: 635072

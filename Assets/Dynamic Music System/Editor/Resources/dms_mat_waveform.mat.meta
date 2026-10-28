@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e8e0f45a927846bd93d0fa6f862a3cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/Resources/dms_mat_waveform.mat
+  uploadId: 635072

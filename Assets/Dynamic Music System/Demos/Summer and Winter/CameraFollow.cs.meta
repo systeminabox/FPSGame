@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1a2d6461ec2f07c4f8ea74cc8c39f6d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Demos/Summer and Winter/CameraFollow.cs
+  uploadId: 635072

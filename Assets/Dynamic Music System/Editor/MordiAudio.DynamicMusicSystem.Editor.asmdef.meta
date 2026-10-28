@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 87e937b8e6c1a5e40a4b6ffc7a856290
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/MordiAudio.DynamicMusicSystem.Editor.asmdef
+  uploadId: 635072

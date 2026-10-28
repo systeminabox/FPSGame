@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 01e3bc406faf4bb4e98e88ed61ab50a2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Demos/Summer and Winter/CharacterController.cs
+  uploadId: 635072

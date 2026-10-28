@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ea02e1f1ad3d4d14ea3a1e17e9565428
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/DynamicMusicSystemEditor.cs
+  uploadId: 635072

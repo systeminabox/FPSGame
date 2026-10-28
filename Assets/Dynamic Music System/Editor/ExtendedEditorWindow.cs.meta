@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1644b7b45ad81b84ca0647d314f70b95
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/ExtendedEditorWindow.cs
+  uploadId: 635072

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ecf76c9c1a2883246b551061a0951977
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Demos/Basic Demo/StatusTextFetcher.cs
+  uploadId: 635072

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5e6218483ceb3d94a9f3affe3fc68736
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199393
+  packageName: Dynamic Music System
+  packageVersion: 1.2.0
+  assetPath: Assets/Dynamic Music System/Editor/LinkedSectionEditorWindow.cs
+  uploadId: 635072
