@@ -1,0 +1,2 @@
+- After importing the _HDRP package make sure to open the _HDRP variant scene (_HDRP>Scenes)
+- An example Postprocess Volume Profile is provided (VattalusAssets>Common_HDRP>Vattalus_VolumeProfile)

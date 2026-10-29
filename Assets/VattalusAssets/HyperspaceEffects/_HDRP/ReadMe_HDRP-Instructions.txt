@@ -1,0 +1,1 @@
+- After importing the _HDRP package make sure to open the _HDRP variant scenes (_HDRP>Scenes)

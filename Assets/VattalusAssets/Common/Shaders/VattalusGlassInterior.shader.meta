@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8366c9b5b2a15594090491db35458e91
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 342004
+  packageName: 'Spaceship with Full Interior: Minerva Corvette'
+  packageVersion: 1.2.3
+  assetPath: Assets/VattalusAssets/Common/Shaders/VattalusGlassInterior.shader
+  uploadId: 986638

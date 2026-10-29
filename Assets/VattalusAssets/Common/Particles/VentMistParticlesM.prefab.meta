@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b468830b574bd5c4badaf5b9699b33fa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 342004
+  packageName: 'Spaceship with Full Interior: Minerva Corvette'
+  packageVersion: 1.2.3
+  assetPath: Assets/VattalusAssets/Common/Particles/VentMistParticlesM.prefab
+  uploadId: 986638

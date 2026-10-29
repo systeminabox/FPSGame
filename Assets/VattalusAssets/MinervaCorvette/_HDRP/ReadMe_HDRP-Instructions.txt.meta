@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 415efe42360731e4aa9c1bce1f69c89b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 342004
+  packageName: 'Spaceship with Full Interior: Minerva Corvette'
+  packageVersion: 1.2.3
+  assetPath: Assets/VattalusAssets/MinervaCorvette/_HDRP/ReadMe_HDRP-Instructions.txt
+  uploadId: 986638
