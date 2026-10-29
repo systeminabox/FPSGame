@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b249a01a826f74fafda6c08c41d00e, type: 3}
+  m_Name: InputIconSet
+  m_EditorClassIdentifier: Assembly-CSharp::InputIconSet
+  xBox:
+    buttonSouth: {fileID: 1536610985664812233, guid: cb5bd066bafbb4548a92d8bd3081b665, type: 3}
+    buttonNorth: {fileID: -1852535901072925621, guid: 535c4cd933518b746b6dde7cb2b44ea2, type: 3}
+    buttonEast: {fileID: -5139752235935985354, guid: 9478b3fe22a645b499c02e281361e5e3, type: 3}
+    buttonWest: {fileID: -9085605288992608834, guid: c5199c007985f1749bb5b1b2d8660326, type: 3}
+    startButton: {fileID: -4888617564249088142, guid: 80934b1024921de45bcbf66a64a89eea, type: 3}
+    selectButton: {fileID: -2175723170780908905, guid: a863864525cdb3349bbe5bb349d21384, type: 3}
+    leftTrigger: {fileID: -3997850089383228863, guid: 4cce01619eaec824da3fc7f38bccd405, type: 3}
+    rightTrigger: {fileID: 3336128370510153928, guid: f40183f5eb889d44889d9656277b561e, type: 3}
+    leftShoulder: {fileID: 2267800731179639549, guid: 58aa94624f7a29d4888cd6f0ec121016, type: 3}
+    rightShoulder: {fileID: 4249578791139060025, guid: 1fc1f349157e4834db500f31378179be, type: 3}
+    dpad: {fileID: -5197839481415047839, guid: 07d20d07523c3154ca3d180ae4285d9f, type: 3}
+    dpadUp: {fileID: -8469937635646949677, guid: ef108ab7b2c9207479da0a707b11df79, type: 3}
+    dpadDown: {fileID: 4692930742817869381, guid: 3da499ae57b0b114a94942fe7a2ca6ee, type: 3}
+    dpadLeft: {fileID: -6164935804030125252, guid: 39e41236db83842448038073e917cf24, type: 3}
+    dpadRight: {fileID: -8794133603664248715, guid: 90c1efd435fc1de47a63c3f8459b0940, type: 3}
+    leftStick: {fileID: 2175287616492556405, guid: 2cb9dc21951dfe9428cd8f5728a7ddee, type: 3}
+    rightStick: {fileID: 232727946549195185, guid: 2a3d036acc4b92b418153c83a665e45a, type: 3}
+    leftStickPress: {fileID: 1569425074811258265, guid: d20cf3edc90245641bcd6e80fd636e42, type: 3}
+    rightStickPress: {fileID: 7152289617307078270, guid: 0c26c29acc2a7c24ba77ceb2c2d75c9b, type: 3}
+  keyboard:
+    KeyA: {fileID: 1145220741083561907, guid: e804c972a426d48439be9ea48acde0d0, type: 3}
+    KeyB: {fileID: 4387665465535511833, guid: 048869683c183514aa28d80eac1caab3, type: 3}
+    KeyC: {fileID: 7489297749385158885, guid: 4ff58ee5d4e04f543a9884acb1254644, type: 3}
+    KeyD: {fileID: -8387302115945079765, guid: 26eb312fc677dc44b9a954e5370c509a, type: 3}
+    KeyE: {fileID: 1622727937493990531, guid: e6d98bc3b334d2a4394ffe28dc3b032d, type: 3}
+    KeyF: {fileID: -9125861541802950594, guid: d9532ba9f3170924eae4f0e7b5477ba6, type: 3}
+    KeyG: {fileID: -6228684978618632526, guid: a1539f5822236484eb909f0864acefd3, type: 3}
+    KeyH: {fileID: -9011578454848037910, guid: e17b95e887f8db347bcc4a27ec5c4cde, type: 3}
+    KeyI: {fileID: 6624163752006436703, guid: 5d9461155e690074b945433ecc235272, type: 3}
+    KeyJ: {fileID: -2577820472799158749, guid: ddc062d986b82764986976f267819ff1, type: 3}
+    KeyK: {fileID: 3290407570213495539, guid: 248bcbe126b70c046b790bfca433de3e, type: 3}
+    KeyL: {fileID: 2711562684772605928, guid: 7796372412f3f1842b8ab624615473e9, type: 3}
+    KeyM: {fileID: 8162251711410599823, guid: ec54d6c0640b1574eb47965cf579c18c, type: 3}
+    KeyN: {fileID: 1613905444216025894, guid: a8d09ec2db0598847b3a95a56b6d75fb, type: 3}
+    KeyO: {fileID: 5237277465588018485, guid: 7b7c2ba12d2587b4ab8e72a54b7d6c6b, type: 3}
+    KeyP: {fileID: 7358378815127608425, guid: 6d014378463567e42a5b3551615116fb, type: 3}
+    KeyQ: {fileID: 1179216485070693450, guid: eb32e27adfbbe2c4b8049f29f42b59d6, type: 3}
+    KeyR: {fileID: -6780523318993171746, guid: 8942af59a3182ad40bed0349427b210d, type: 3}
+    KeyS: {fileID: -3937758826142331281, guid: ff4da63eaf40687428a1886b1c152aaf, type: 3}
+    KeyT: {fileID: 3804896374830911662, guid: 0e2da3cb3c26c4449b1b172045a01aa1, type: 3}
+    KeyU: {fileID: 1897869547920896223, guid: c369122ef3eba99479aa1f1f50fb1fce, type: 3}
+    KeyV: {fileID: -8655167945723465343, guid: 58703ce8bc099fd4792464bba2e12537, type: 3}
+    KeyW: {fileID: 6539619573780045288, guid: 59918cce2fb2561438f3b46b7f7326b6, type: 3}
+    KeyX: {fileID: -1679339380555045785, guid: ffba90f9de638484398cb086af8cfdfe, type: 3}
+    KeyY: {fileID: -2318533488985238692, guid: 2f6b3664743a24d419e0535164353ffa, type: 3}
+    KeyZ: {fileID: 8988070500663906562, guid: 8e1ccd125b9eacb4fa33c83d0ab4ea44, type: 3}
+    Escape: {fileID: 5161238624427270819, guid: 93e385fc3fe53d242a1d07c3f2907116, type: 3}
+    Function1: {fileID: -5276268084499866289, guid: 30ca1e66140f3fa4f8a67904f4e8f82a, type: 3}
+    Function2: {fileID: -8406788298635153352, guid: 05b050ec1eb4aa340966cc5d5819b11b, type: 3}
+    Function3: {fileID: 8009288347919174658, guid: 5900864859bd8de46b7a655c1d53262f, type: 3}
+    Function4: {fileID: -1380453812768227926, guid: 5bb03589cad44b94383c83d5f7fd0b5b, type: 3}
+    Function5: {fileID: -5414126393478914263, guid: 8ea7fd0b9f5d84344a1e2981345c713e, type: 3}
+    Function6: {fileID: -2478374994428999686, guid: b24d808514a8fd344b35b8d5082ac2e0, type: 3}
+    Function7: {fileID: -8021247133056268021, guid: abbb826cdc1feee42bbe2d915de8ebeb, type: 3}
+    Function8: {fileID: 5797952619067910518, guid: 3f89269ffbe144b4bbb6150af96a519a, type: 3}
+    Function9: {fileID: 6301311132233469706, guid: 80cd9c3c3f3d9c844b86e8bfac2f1ca4, type: 3}
+    Function10: {fileID: 3344012895008649251, guid: f48136607c1dcb3418dd09c59e45659a, type: 3}
+    Function11: {fileID: 5868078030359579539, guid: 60cdac5572860fa49a4000cbc1e73bbb, type: 3}
+    Function12: {fileID: -3131574434052127199, guid: 39973efc111658b479996082a5d9da4e, type: 3}
+    Space: {fileID: -557078281788634498, guid: 11781e584f170f348a9dac632bd5b27d, type: 3}
+    Enter: {fileID: -4761915745340555039, guid: f9cde59658d083948ad5c7ec4712382f, type: 3}
+    Backspace: {fileID: 8086792615903017955, guid: 696e595639e03074b8db937f6841294e, type: 3}
+    Tab: {fileID: 2363609691092413705, guid: 77d262a83fc5c5344a01ccd02067ae54, type: 3}
+    Shift: {fileID: -465843913026089529, guid: d4d8af98019b7a0479f82a47f031924a, type: 3}
+    Control: {fileID: 3795127328408915156, guid: 1f61f4044924b8549a749b3356a65859, type: 3}
+    Alt: {fileID: -8537438008601397705, guid: b996f7b4349cb894c9b61723958fc407, type: 3}
+    Tilda: {fileID: -927971289186269160, guid: e1bf2e3ec3daf4241b3a29600e8a3f5e, type: 3}
+    One: {fileID: 2285120093584573513, guid: 850ca8d680a664743a06fc266864e0ba, type: 3}
+    Two: {fileID: -4842122482347598607, guid: 925ff26afa4fa8342b4a5ccdb338f1a4, type: 3}
+    Three: {fileID: -7699723923551181482, guid: 0cc298e6845096843ba47de08fcf2acb, type: 3}
+    Four: {fileID: 4871772481475680366, guid: 613b9653dced9ad4b933dc91b8aa801c, type: 3}
+    Five: {fileID: 3284144849386901357, guid: 89c8eef98060e854791233f491db6186, type: 3}
+    Six: {fileID: -1550802614037358739, guid: e235df33cf759994482f7d4f2c4b2276, type: 3}
+    Seven: {fileID: 3132562753328626587, guid: 51b3eafb50fd0c24083df05371667042, type: 3}
+    Eight: {fileID: 890350665705472834, guid: b23745294d824504c9fad5fb90123167, type: 3}
+    Nine: {fileID: 4052524382370747962, guid: 673b7550177d89541a31c9d0a70b09b3, type: 3}
+    Zero: {fileID: -298569682275349766, guid: 0002709ad79012049a6e97e658ef9762, type: 3}
+    Minus: {fileID: -2999733867205281054, guid: b740fe483193d9e4b9e8f01c69527a2e, type: 3}
+    Equals: {fileID: -5703737665441673626, guid: 793646532c99eaf4c9494e603e86fd8b, type: 3}
+    LeftBracket: {fileID: 6859698589740800194, guid: 7421bf7ebd25c254493fd87a74e67f02, type: 3}
+    RightBracket: {fileID: 3681141240734532656, guid: 74840eb98ed8ef94aaf9c58cd524be06, type: 3}
+    Backslash: {fileID: 2269918448686567404, guid: b6c6d7a094cad1d4fb66571dcc9beb86, type: 3}
+    Semicolon: {fileID: 2062452209080724124, guid: c3fc5f7fee3f5784b94e5bb920dbf111, type: 3}
+    Quote: {fileID: 785660994695051435, guid: b90c7b7d33353564aad4630294443749, type: 3}
+    Comma: {fileID: -6681133147278788448, guid: 55a1ea7fe47f1074891e4088e6414672, type: 3}
+    Period: {fileID: -7957453670165720738, guid: dfde5d4e8b186184b9c26398e8e03614, type: 3}
+    Slash: {fileID: 8558015319005732945, guid: 23f32faaf5e8e57479952d7a9cd6a111, type: 3}
+    UpArrow: {fileID: 2349417091975035521, guid: 7bca5db588e7fa74bad16327b583e1ec, type: 3}
+    DownArrow: {fileID: 5154032583816780984, guid: cbd68e9147d59f64488963bd8818472a, type: 3}
+    LeftArrow: {fileID: -3607151359317351652, guid: 597c6665044267041b55cb2195237e30, type: 3}
+    RightArrow: {fileID: -4797783203767385232, guid: 32ea60a41511410448be24d0bcde7459, type: 3}
+    NumPad0: {fileID: 0}
+    NumPad1: {fileID: 0}
+    NumPad2: {fileID: 0}
+    NumPad3: {fileID: 0}
+    NumPad4: {fileID: 0}
+    NumPad5: {fileID: 0}
+    NumPad6: {fileID: 0}
+    NumPad7: {fileID: 0}
+    NumPad8: {fileID: 0}
+    NumPad9: {fileID: 0}
+    NumPadDecimal: {fileID: 0}
+    NumPadDivide: {fileID: 0}
+    NumPadMultiply: {fileID: 0}
+    NumPadSubtract: {fileID: 0}
+    NumPadAdd: {fileID: 0}
+    NumPadEnter: {fileID: 0}
+    M1: {fileID: 21300000, guid: 923d3b17f94090c46bcac637fd47ed41, type: 3}
+    M2: {fileID: 21300000, guid: 2d8ce5faf461cfd4f87c1604bb26b004, type: 3}
+    M3: {fileID: 21300000, guid: 91984755d9fbd04449ed3eadae0a6f33, type: 3}
