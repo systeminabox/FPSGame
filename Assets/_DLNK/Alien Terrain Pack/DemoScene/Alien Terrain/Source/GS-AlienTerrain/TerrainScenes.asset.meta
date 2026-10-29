@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b6c658271f30a94390173844d6ecfba
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 38488
+  packageName: Alien Terrain Pack
+  packageVersion: 1.5.1
+  assetPath: Assets/_DLNK/Alien Terrain Pack/DemoScene/Alien Terrain/Source/GS-AlienTerrain/TerrainScenes.asset
+  uploadId: 628025

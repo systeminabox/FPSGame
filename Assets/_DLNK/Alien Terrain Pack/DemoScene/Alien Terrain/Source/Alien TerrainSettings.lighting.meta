@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 50035ae45d1c83b4baaf12a6084ce24c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 38488
+  packageName: Alien Terrain Pack
+  packageVersion: 1.5.1
+  assetPath: Assets/_DLNK/Alien Terrain Pack/DemoScene/Alien Terrain/Source/Alien
+    TerrainSettings.lighting
+  uploadId: 628025
