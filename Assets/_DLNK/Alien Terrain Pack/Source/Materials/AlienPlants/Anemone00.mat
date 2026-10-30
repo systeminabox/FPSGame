@@ -119,6 +119,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AOBurn: 0
@@ -126,6 +138,8 @@ Material:
     - _AOEnable: 1
     - _AOLevel: 0.5
     - _AOPower: 0.5
+    - _AlphaCutoff: 0.5
+    - _AlphaThreshold: 0.2
     - _AmbientalPower: 1
     - _AnimIntensity: -0.19
     - _BumpScale: 3.55
@@ -137,6 +151,7 @@ Material:
     - _DispPower: 1
     - _DstBlend: 0
     - _EmissionLM: 0.12
+    - _EnvironmentReflections: 1
     - _Fresnel: -0.09
     - _GlossMapScale: 1
     - _Glossiness: 0.271
@@ -149,12 +164,17 @@ Material:
     - _Mode: 0
     - _MovementAOMask: 0.72
     - _NoiseScale: 1
+    - _NoiseScale1: 1
     - _Noisespeed: 1
+    - _Noisespeed1: 1
     - _NormalScale: 1
     - _NormalSmooth: 0
     - _OcclusionStrenght: 2.44
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _ReflectionEmission: 0
     - _ReflectionPower: 1
     - _RimFresnel: 3
@@ -187,6 +207,7 @@ Material:
     - _ColorTint: {r: 0.02205884, g: 1, b: 0.5808825, a: 1}
     - _EmissionColor: {r: 1, g: 0.3927647, b: 0.1745283, a: 1}
     - _LeavesGradientxy: {r: -0.7, g: 2, b: 0, a: 0}
+    - _LeavesGradientxy1: {r: 0, g: 1, b: 0, a: 0}
     - _MotionValue: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _ReflectionTint: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.9264706, g: 0.5858564, b: 0.5858564, a: 1}
