@@ -105,7 +105,7 @@ public class InputManager : Singleton<InputManager>
         MoveInput = _moveAction.ReadValue<Vector2>();
         LookInput = cursorInputForLook ? _lookAction.ReadValue<Vector2>() : Vector2.zero;
         
-        Debug.Log($"Move: {MoveInput}, Look: {LookInput}");
+//        Debug.Log($"Move: {MoveInput}, Look: {LookInput}");
 
         JumpJustPressed = _jumpAction.WasPressedThisFrame();
         JumpBeingHeld = _jumpAction.IsPressed();

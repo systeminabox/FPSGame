@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public float interactRange = 10f;
+
+    public GameObject camera;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +23,9 @@ public class PlayerInteract : MonoBehaviour
 
     private void Interact()
     {
-        Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactRange);
+        Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, interactRange);
         Debug.DrawRay(transform.position, transform.forward * interactRange, Color.red);
+        Debug.Log("Attempting Interact " + hit.collider);
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.gameObject);
