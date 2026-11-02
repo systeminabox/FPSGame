@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 4879564499464047444}
   - component: {fileID: 3876683322050801534}
   - component: {fileID: 8199682927418407994}
+  - component: {fileID: 3079938157869891183}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -791,6 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f5d64591c24702bf2ae0c63118760b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarCanvas
+  analogMovement: 0
+  cursorLocked: 1
+  cursorInputForLook: 1
 --- !u!114 &8199682927418407994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +825,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3079938157869891183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441165348120711343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d59345ff710449ebf88efd06f13f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeviceState
 --- !u!1 &7116198955397109863
 GameObject:
   m_ObjectHideFlags: 0

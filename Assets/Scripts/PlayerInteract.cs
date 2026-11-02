@@ -5,11 +5,14 @@ public class PlayerInteract : MonoBehaviour
     public float interactRange = 10f;
 
     public GameObject camera;
+
+    public GameObject prompt;
+    InputPrompt inputPrompt;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        inputPrompt = prompt.GetComponent<InputPrompt>();
     }
 
     // Update is called once per frame
@@ -18,6 +21,37 @@ public class PlayerInteract : MonoBehaviour
         if (InputManager.Instance.InteractInput)
         {
             Interact();
+        }
+    }
+    
+    void FixedUpdate()
+    {
+        Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, interactRange);
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.gameObject);
+            var obj = hit.collider.gameObject.GetComponentInParent<Interactable>();
+            Debug.Log(obj);
+            if (obj != null)
+            {
+                inputPrompt.overrideText = true;
+                inputPrompt.labelText = obj.IsActivated ? obj.deactivateText : obj.activateText;
+                prompt.SetActive(true);
+            }
+            else
+            {
+                var vObj = hit.collider.gameObject.GetComponentInParent<VattalusInteractable>();
+                if (vObj != null)
+                {
+                    inputPrompt.overrideText = true;
+                    inputPrompt.labelText = vObj.isActivated ? vObj.deactivateText : vObj.activateText;
+                    prompt.SetActive(true);
+                }
+                else
+                {
+                    prompt.SetActive(false);
+                }
+            }
         }
     }
 
@@ -34,6 +68,14 @@ public class PlayerInteract : MonoBehaviour
             if (obj != null)
             {
                 obj.PlayerInteract();
+            }
+            else
+            {
+                var vObj = hit.collider.gameObject.GetComponentInParent<VattalusInteractable>();
+                if (vObj != null)
+                {
+                    vObj.Iteract();
+                }
             }
         }
     }

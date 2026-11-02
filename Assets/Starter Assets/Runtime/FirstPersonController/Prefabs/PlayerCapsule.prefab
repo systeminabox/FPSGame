@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 8616685848737228382}
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 573710663313089538}
+  - component: {fileID: 545194160195907033}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -201,7 +202,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 55
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
@@ -253,3 +254,18 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 90
   BottomClamp: -90
+--- !u!114 &545194160195907033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fd4b820f86bf94db281e365847df3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  interactRange: 5
+  camera: {fileID: 0}
+  prompt: {fileID: 0}

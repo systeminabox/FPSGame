@@ -35944,9 +35944,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8302413965868120047}
-  - component: {fileID: 5938279239843143412}
-  - component: {fileID: 2930356868568711742}
   - component: {fileID: 4815884791209433571}
+  - component: {fileID: 5552945241983470550}
+  - component: {fileID: 3243818796274879491}
   m_Layer: 0
   m_Name: Door_250cm_01_Skin4_Prefab
   m_TagString: Untagged
@@ -35971,7 +35971,28 @@ Transform:
   - {fileID: 5042465614027018156}
   m_Father: {fileID: 1881408263036385698}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &5938279239843143412
+--- !u!65 &4815884791209433571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984866023118997680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23, y: 0.33, z: 0.71}
+  m_Center: {x: 0.7, y: 1.3, z: 0}
+--- !u!114 &5552945241983470550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35980,14 +36001,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3984866023118997680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b502bb5b76b1cbe43825f04eaea97632, type: 3}
+  m_Script: {fileID: 11500000, guid: f1d58a21e42944a68ecc28b64f145342, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  connectedRoom1: {fileID: 3879409423791469983}
-  connectedRoom2: {fileID: 2811266775316580983}
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  interactable: {fileID: 0}
   autoOpen: 0
   autoClose: 1
-  autoOpenDistance: 3
+  autoOpenDistance: 4
+  triggerHeight: 2.5
   onDoorOpenStarted:
     m_PersistentCalls:
       m_Calls:
@@ -36072,7 +36093,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2930356868568711742
+--- !u!114 &3243818796274879491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36081,24 +36102,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3984866023118997680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217d1c1322ae2a540aec0a18d42d6784, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6ccff8fe1f488b834f5a3c194c2d1b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
   defaultState: 0
   animClipSpeed: 1
   activateText: Open
   deactivateText: Close
-  activateAudioClip: {fileID: 8300000, guid: 37eaaef43094bc6478c632cf5d6740e4, type: 3}
-  activateAudioVolume: 0.85
+  activateAudioClip: {fileID: 0}
+  activateAudioVolume: 1
   activateAudioPitch: 1
-  deactivateAudioClip: {fileID: 8300000, guid: 36e02fa1577f1c04b88ab9ce8de85528, type: 3}
-  deactivateAudioVolume: 0.85
+  deactivateAudioClip: {fileID: 0}
+  deactivateAudioVolume: 1
   deactivateAudioPitch: 1
-  linkedInteractables:
-  - {fileID: 5490744437170510170}
-  - {fileID: 3524649226595116806}
-  conformLinked: 1
+  linkedInteractables: []
+  conformLinked: 0
   animationComponent: {fileID: 7942466751686022697}
   positionAnimation: {x: 0, y: 0, z: 0}
   rotationAnimation: {x: 0, y: 0, z: 0}
@@ -36119,27 +36137,6 @@ MonoBehaviour:
   onDeactivateEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &4815884791209433571
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3984866023118997680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.23, y: 0.33, z: 0.71}
-  m_Center: {x: 0.7, y: 1.3, z: 0}
 --- !u!1 &3996151376861321779
 GameObject:
   m_ObjectHideFlags: 0
@@ -45522,7 +45519,7 @@ MonoBehaviour:
   deactivateAudioVolume: 1
   deactivateAudioPitch: 1
   linkedInteractables:
-  - {fileID: 2930356868568711742}
+  - {fileID: 0}
   conformLinked: 1
   animationComponent: {fileID: 0}
   positionAnimation: {x: 0, y: 0, z: 0}
@@ -61894,7 +61891,7 @@ MonoBehaviour:
   deactivateAudioVolume: 1
   deactivateAudioPitch: 1
   linkedInteractables:
-  - {fileID: 2930356868568711742}
+  - {fileID: 0}
   conformLinked: 1
   animationComponent: {fileID: 0}
   positionAnimation: {x: 0, y: 0, z: 0}
@@ -88702,9 +88699,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804701046007925542}
-  - component: {fileID: 1380293125396915372}
-  - component: {fileID: 9142747311915646460}
   - component: {fileID: 5198092409777839917}
+  - component: {fileID: 7183690897923157204}
+  - component: {fileID: 4506951416387344436}
   m_Layer: 0
   m_Name: Door_300cm_01_Skin2_Prefab
   m_TagString: Untagged
@@ -88729,7 +88726,28 @@ Transform:
   - {fileID: 8769059307511164747}
   m_Father: {fileID: 5642300310830106059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1380293125396915372
+--- !u!65 &5198092409777839917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907678234940057704}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.35, z: 0.7}
+  m_Center: {x: -1.25, y: 1.37, z: 0.25}
+--- !u!114 &7183690897923157204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88738,14 +88756,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 8907678234940057704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b502bb5b76b1cbe43825f04eaea97632, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6ccff8fe1f488b834f5a3c194c2d1b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  connectedRoom1: {fileID: 319228526462462927}
-  connectedRoom2: {fileID: 2811266775316580983}
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  defaultState: 0
+  animClipSpeed: 1
+  activateText: Open
+  deactivateText: Close
+  activateAudioClip: {fileID: 0}
+  activateAudioVolume: 1
+  activateAudioPitch: 1
+  deactivateAudioClip: {fileID: 0}
+  deactivateAudioVolume: 1
+  deactivateAudioPitch: 1
+  linkedInteractables: []
+  conformLinked: 0
+  animationComponent: {fileID: 3527961288932152524}
+  positionAnimation: {x: 0, y: 0, z: 0}
+  rotationAnimation: {x: 0, y: 0, z: 0}
+  animationDuration: 2
+  isSeat: 0
+  seatCameraAnchor: {fileID: 0}
+  seatCamAngleConstraints: {x: 90, y: 90}
+  toggleParticles: 0
+  onAnimationStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onAnimationEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onActivateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4506951416387344436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907678234940057704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d58a21e42944a68ecc28b64f145342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
+  interactable: {fileID: 0}
   autoOpen: 0
-  autoClose: 1
+  autoClose: 0
   autoOpenDistance: 4
+  triggerHeight: 2.5
   onDoorOpenStarted:
     m_PersistentCalls:
       m_Calls:
@@ -88830,74 +88892,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9142747311915646460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907678234940057704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217d1c1322ae2a540aec0a18d42d6784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  defaultState: 0
-  animClipSpeed: 1
-  activateText: Open
-  deactivateText: Close
-  activateAudioClip: {fileID: 8300000, guid: 37eaaef43094bc6478c632cf5d6740e4, type: 3}
-  activateAudioVolume: 1
-  activateAudioPitch: 0.45
-  deactivateAudioClip: {fileID: 8300000, guid: 36e02fa1577f1c04b88ab9ce8de85528, type: 3}
-  deactivateAudioVolume: 1
-  deactivateAudioPitch: 0.45
-  linkedInteractables:
-  - {fileID: 4791449592241253158}
-  - {fileID: 4187171846924031326}
-  conformLinked: 1
-  animationComponent: {fileID: 3527961288932152524}
-  positionAnimation: {x: 0, y: 0, z: 0}
-  rotationAnimation: {x: 0, y: 0, z: 0}
-  animationDuration: 2
-  isSeat: 0
-  seatCameraAnchor: {fileID: 0}
-  seatCamAngleConstraints: {x: 90, y: 90}
-  toggleParticles: 0
-  onAnimationStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onAnimationEndEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onActivateEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeactivateEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!65 &5198092409777839917
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907678234940057704}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.35, z: 0.7}
-  m_Center: {x: -1.25, y: 1.37, z: 0.25}
 --- !u!1 &8912558224967957307
 GameObject:
   m_ObjectHideFlags: 0

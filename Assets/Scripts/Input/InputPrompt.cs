@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
 public class InputPrompt : MonoBehaviour
 {
     [SerializeField] private InputIconSet inputIconSet;
@@ -19,13 +20,13 @@ public class InputPrompt : MonoBehaviour
     [HideInInspector] public bool overrideText;
     [HideInInspector] public string labelText;
 
-    [SerializeField]private SpriteRenderer _icon;
+    private InputSpriteComponent _icon;
     [SerializeField]private TMPro.TextMeshProUGUI _text;
     
 
     private void Awake()
     {
-        
+        _icon = gameObject.AddComponent<InputSpriteComponent>();
         
     }
 
@@ -52,7 +53,7 @@ public class InputPrompt : MonoBehaviour
         int index = FindBindingIndex(action, isGamepad);
         if (index < 0)
         {
-            _icon.sprite = null;
+            _icon.SetSprite(null);
             return;
         }
  
@@ -109,7 +110,7 @@ public class InputPrompt : MonoBehaviour
     {
         if (_icon)
         {
-            _icon.sprite = sprite;
+            _icon.SetSprite(sprite);
             
         }
 
