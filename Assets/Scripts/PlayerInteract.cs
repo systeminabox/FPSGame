@@ -13,6 +13,7 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
         inputPrompt = prompt.GetComponent<InputPrompt>();
+        prompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,10 +23,6 @@ public class PlayerInteract : MonoBehaviour
         {
             Interact();
         }
-    }
-    
-    void FixedUpdate()
-    {
         Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, interactRange);
         if (hit.collider != null)
         {
@@ -50,9 +47,15 @@ public class PlayerInteract : MonoBehaviour
                 else
                 {
                     prompt.SetActive(false);
+                    Debug.Log("No interactable found");
                 }
             }
         }
+    }
+    
+    void FixedUpdate()
+    {
+        
     }
 
     private void Interact()
