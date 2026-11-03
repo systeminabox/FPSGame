@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Anemone04
   m_Shader: {fileID: 4800000, guid: 1943d357ba4d6c8438f2b80309da5570, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _AOENABLE_ON
@@ -23,6 +25,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -122,6 +125,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AOBurn: 0
@@ -129,6 +144,7 @@ Material:
     - _AOEnable: 1
     - _AOLevel: 0.5
     - _AOPower: 0.5
+    - _AlphaCutoff: 0.5
     - _AmbientalPower: 1
     - _AnimIntensity: 0.3
     - _BumpScale: 1
@@ -140,6 +156,7 @@ Material:
     - _DispPower: 1
     - _DstBlend: 0
     - _EmissionLM: 0
+    - _EnvironmentReflections: 1
     - _Fresnel: -0.04
     - _GlossMapScale: 1
     - _Glossiness: 0.134
@@ -158,10 +175,14 @@ Material:
     - _OcclusionStrenght: 2.48
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _ReflectionEmission: 0
     - _ReflectionPower: 1
     - _RimFresnel: 3
     - _RimPower: 1.31
+    - _RotateMask: 0
     - _Shinniness: 0.5
     - _Smoothness: 0.64
     - _SmoothnessTextureChannel: 0
@@ -196,3 +217,4 @@ Material:
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _TransColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
