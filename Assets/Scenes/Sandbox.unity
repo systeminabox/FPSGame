@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: prompt
       value: 
       objectReference: {fileID: 2077945171}
+    - target: {fileID: 545194160195907033, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: interactRange
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 573710663313089538, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 1
