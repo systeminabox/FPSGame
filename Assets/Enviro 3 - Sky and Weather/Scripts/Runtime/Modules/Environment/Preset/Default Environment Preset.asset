@@ -158,11 +158,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    temperature: 8.778311
+    temperature: 5.1016517
     temperatureWeatherMod: 0
     temperatureCustomMod: 0
     temperatureChangingSpeed: 0.1
-    wetness: 0.007532068
+    wetness: 0
     wetnessTarget: 0
     snow: 0
     snowTarget: 0
@@ -171,10 +171,10 @@ MonoBehaviour:
     snowAccumulationSpeed: 1
     snowMeltSpeed: 1
     snowMeltingTresholdTemperature: 1
-    windDirectionX: -0.024
-    windDirectionY: 0.154
-    windSpeed: 0.5
-    windTurbulence: 0.2
+    windDirectionX: 0.009
+    windDirectionY: 0.157
+    windSpeed: 0.25
+    windTurbulence: 0.25
   preset: {fileID: 0}
   showSeasonControls: 0
   showTemperatureControls: 0

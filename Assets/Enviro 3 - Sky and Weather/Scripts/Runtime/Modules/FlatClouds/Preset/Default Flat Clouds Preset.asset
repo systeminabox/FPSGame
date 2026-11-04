@@ -18,9 +18,9 @@ MonoBehaviour:
   settings:
     useCirrusClouds: 1
     cirrusCloudsTex: {fileID: 2800000, guid: 75c66597a85001644b2de40147b8d196, type: 3}
-    cirrusCloudsAlpha: 0
-    cirrusCloudsColorPower: 1.13
-    cirrusCloudsCoverage: 0.293
+    cirrusCloudsAlpha: 0.5
+    cirrusCloudsColorPower: 1
+    cirrusCloudsCoverage: 0.5
     cirrusCloudsColor:
       serializedVersion: 2
       key0: {r: 0, g: 0, b: 0, a: 1}
@@ -48,6 +48,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     cirrusCloudsWindIntensity: 0.5
@@ -81,6 +82,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     flatCloudsAmbientColor:
@@ -110,15 +112,16 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
-    flatCloudsLightIntensity: 0.807
-    flatCloudsAmbientIntensity: 1.037
-    flatCloudsShadowIntensity: 1.138
+    flatCloudsLightIntensity: 0.478
+    flatCloudsAmbientIntensity: 0.969
+    flatCloudsShadowIntensity: 0.6
     flatCloudsShadowSteps: 8
     flatCloudsHGPhase: 0.8
-    flatCloudsCoverage: 1.287
-    flatCloudsDensity: 1.252
+    flatCloudsCoverage: 1.189
+    flatCloudsDensity: 1
     flatCloudsAltitude: 1
     flatCloudsTonemapping: 0
     flatCloudsBaseTiling: 1

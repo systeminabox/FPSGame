@@ -19,7 +19,7 @@ MonoBehaviour:
     prefab: {fileID: 8233971941884837668, guid: 3686e34c2aa90c44e8eab718f3bf99b6, type: 3}
     customLightningEffect: {fileID: 0}
     lightningStorm: 0
-    randomLightingDelay: 10
+    randomLightingDelay: 1
     randomSpawnRange: 5000
     randomTargetRange: 5000
     cloudsLightningRadius: 2500
