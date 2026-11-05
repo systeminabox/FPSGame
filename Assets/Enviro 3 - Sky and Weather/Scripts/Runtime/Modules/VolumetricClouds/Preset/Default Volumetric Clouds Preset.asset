@@ -20,43 +20,43 @@ MonoBehaviour:
     cloudsWindDirectionYModifier: 1
     windSpeedModifier: 0.05
     windUpwards: 0.025
-    coverage: 0.171
+    coverage: -0.08
     worleyFreq2: 48
     worleyFreq1: 12
-    dilateCoverage: 0.189
-    dilateType: 1
-    cloudsTypeModifier: 0.558
+    dilateCoverage: 0.757
+    dilateType: 0
+    cloudsTypeModifier: 0
     locationOffset: {x: 0.8, y: 0}
     bottomCloudsHeight: 2000
     topCloudsHeight: 8000
-    density: 1.3
-    densitySmoothness: 1.3
-    scatteringIntensity: 10
-    edgeHighlightStrength: 0.288
-    silverLiningSpread: 0.128
-    silverLiningIntensity: 0.128
+    density: 0.56
+    densitySmoothness: 1.712
+    scatteringIntensity: 7.11
+    edgeHighlightStrength: 0
+    silverLiningSpread: 0.092
+    silverLiningIntensity: 2
     lightningIntensity: 0
-    curlIntensity: 0.55
+    curlIntensity: 0.66
     lightStepModifier: 0.011
-    multiScatterStrength: 0.329
-    multiScatterFalloff: 0.302
-    ambientFloor: 0.196
-    absorbtion: 1.167
-    exposure: 2
+    multiScatterStrength: 0.367
+    multiScatterFalloff: 0.209
+    ambientFloor: 0.101
+    absorbtion: 0.207
+    exposure: 0.91
     baseNoiseUV: 48
     detailNoiseUV: 24
-    baseNoiseUVMultiplier: 0.35
-    detailNoiseUVMultiplier: 0.75
-    baseErosionIntensity: 0.018
-    baseNoiseMultiplier: 1.25
-    detailErosionIntensity: 0.2
+    baseNoiseUVMultiplier: 0.64
+    detailNoiseUVMultiplier: 1.09
+    baseErosionIntensity: 0.207
+    baseNoiseMultiplier: 1.28
+    detailErosionIntensity: 0.272
     detailNoiseMultiplier: 1
-    bottomShape: -0.14
-    midShape: -0.4
-    topShape: -0.16
+    bottomShape: 0.41
+    midShape: -1.72
+    topShape: -0.22
     topLayer: 0
-    cloudTypeShaping: 0.196
-    rampShape: 0.513
+    cloudTypeShaping: 0.097
+    rampShape: 0.141
   settingsGlobal:
     floatingPointOriginMod: {x: 0, y: 0, z: 0}
     cloudScrollOffset: {x: 0, y: 0, z: 0}

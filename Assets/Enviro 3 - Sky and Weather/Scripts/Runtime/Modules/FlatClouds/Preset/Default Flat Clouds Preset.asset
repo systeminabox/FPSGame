@@ -115,13 +115,13 @@ MonoBehaviour:
       m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
-    flatCloudsLightIntensity: 0.478
-    flatCloudsAmbientIntensity: 0.969
-    flatCloudsShadowIntensity: 0.6
+    flatCloudsLightIntensity: 0.932
+    flatCloudsAmbientIntensity: 1.319
+    flatCloudsShadowIntensity: 0.947
     flatCloudsShadowSteps: 8
     flatCloudsHGPhase: 0.8
-    flatCloudsCoverage: 1.189
-    flatCloudsDensity: 1
+    flatCloudsCoverage: 1.328
+    flatCloudsDensity: 1.104
     flatCloudsAltitude: 1
     flatCloudsTonemapping: 0
     flatCloudsBaseTiling: 1

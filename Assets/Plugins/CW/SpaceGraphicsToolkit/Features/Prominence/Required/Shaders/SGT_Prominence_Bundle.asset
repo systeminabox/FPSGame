@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Prominence
   target: {fileID: 4800000, guid: 71898a48e07e54b4cafe875e78f853c9, type: 3}
-  variantHash: 451558236
-  projectHash: -284236704
+  variantHash: -2137508155
+  projectHash: 1614697743
   variants:
   - Pipe: 0
     Code: "//<HASH>451558236</HASH>\n////////////////////////////////////////\n//

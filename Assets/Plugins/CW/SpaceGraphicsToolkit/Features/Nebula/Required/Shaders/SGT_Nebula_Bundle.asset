@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Nebula
   target: {fileID: 4800000, guid: 861c8831d07ecb94b9f4e67786286374, type: 3}
-  variantHash: -1572861484
-  projectHash: -284236704
+  variantHash: 1991187459
+  projectHash: 1614697743
   variants:
   - Pipe: 0
     Code: "//<HASH>-1572861484</HASH>\n////////////////////////////////////////\n//

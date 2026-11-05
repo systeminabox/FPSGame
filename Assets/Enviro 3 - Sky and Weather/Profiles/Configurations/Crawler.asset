@@ -197,7 +197,7 @@ MonoBehaviour:
     volumetrics: 1
     steps: 32
     quality: 1
-    scattering: 0.25
+    scattering: 0.195
     scatteringMultiplier:
       serializedVersion: 2
       m_Curve:
@@ -240,8 +240,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    extinction: 0.029
-    anistropy: 0.5
+    extinction: 0.033
+    anistropy: 0.435
     maxRange: 1000
     maxRangePointSpot: 100
     noiseIntensity: 0
@@ -253,16 +253,16 @@ MonoBehaviour:
     fogQualityMode: 0
     floatingPointOriginMod: {x: 0, y: 0, z: 0}
     globalFogHeight: 0
-    fogDensity: 0.01
-    fogHeightFalloff: 0.0048
+    fogDensity: 0.153
+    fogHeightFalloff: 0.0059
     fogHeight: 0
-    fogDensity2: 0.07
+    fogDensity2: 0.086
     fogHeightFalloff2: 0.05
-    fogHeight2: -25
+    fogHeight2: 0
     fogMaxOpacity: 1
     startDistance: 0.01
-    fogColorBlend: 0.75
-    fogColorMod: {r: 1, g: 1, b: 1, a: 1}
+    fogColorBlend: 0.482
+    fogColorMod: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     blockScattering: 0
     ambientColorGradient:
       serializedVersion: 2
@@ -296,7 +296,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     unityFog: 0
     unityFogMode: 2
-    unityFogDensity: 0.05
+    unityFogDensity: 0.002
     unityFogStartDistance: 0
     unityFogEndDistance: 1000
     unityFogColor:
@@ -334,6 +334,8 @@ MonoBehaviour:
   showVolumetricsControls: 0
   showUnityFogControls: 0
   fogLights:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -380,7 +382,7 @@ MonoBehaviour:
     defaultSkyReflectionTex: {fileID: 0}
   preset: {fileID: 11400000, guid: da668770e38694d49af97ecfd05fd7eb, type: 2}
   showReflectionControls: 1
-  lastReflectionUpdate: 8.025
+  lastReflectionUpdate: 5.025
   lastReflectionUpdatePos: {x: 0, y: 0, z: 0}
 --- !u!114 &-2780709178333184838
 MonoBehaviour:
@@ -442,7 +444,7 @@ MonoBehaviour:
   active: 1
   Settings:
     skyMode: 0
-    moonMode: 1
+    moonMode: 2
     forcedSkyboxSetup: 1
     frontColorGradient0:
       serializedVersion: 2
@@ -1072,7 +1074,7 @@ MonoBehaviour:
     intensity: 1
     sunScale: 7
     moonScale: 7
-    mieScatteringMultiplier: 0.75
+    mieScatteringMultiplier: 1
     starsTwinklingSpeed: 0.25
     moonPhase: 0
     skyExposureHDRP:
@@ -1100,10 +1102,10 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     skyColorTint: {r: 1, g: 1, b: 1, a: 1}
-    skyColorExponent: 1.3
+    skyColorExponent: 1.2
   preset: {fileID: 11400000, guid: 5036376da64b341f08d30d744bff9165, type: 2}
-  showSkyControls: 0
-  showSkySunControls: 0
+  showSkyControls: 1
+  showSkySunControls: 1
   showSkyMoonControls: 1
   showSkyStarsControls: 1
   mySkyboxMat: {fileID: 0}
@@ -1991,7 +1993,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    temperature: 8.778311
+    temperature: 7.19345
     temperatureWeatherMod: 0
     temperatureCustomMod: 0
     temperatureChangingSpeed: 0.1
@@ -2004,10 +2006,10 @@ MonoBehaviour:
     snowAccumulationSpeed: 1
     snowMeltSpeed: 1
     snowMeltingTresholdTemperature: 1
-    windDirectionX: 0.009
-    windDirectionY: 0.157
-    windSpeed: 0.25
-    windTurbulence: 0.25
+    windDirectionX: -1
+    windDirectionY: 1
+    windSpeed: 0.2
+    windTurbulence: 0.111
   preset: {fileID: 11400000, guid: c2a8d80258fd83a409a05aa912abca80, type: 2}
   showSeasonControls: 0
   showTemperatureControls: 0
@@ -2052,7 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18a0693e95fd064e9d0a3b96e538236, type: 3}
   m_Name: Lighting Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
@@ -2581,9 +2583,9 @@ MonoBehaviour:
     ambientIntensityModifier: 1
     ambientUpdateEveryFrame: 0
     ambientUpdateIntervall: 0.1
-    shadowIntensity: 0.996
+    shadowIntensity: 1
   preset: {fileID: 11400000, guid: 81d8b109102443243bcb0894975c0718, type: 2}
-  showDirectLightingControls: 0
+  showDirectLightingControls: 1
   showAmbientLightingControls: 0
   showReflectionControls: 0
 --- !u!114 &1121697361819163703
@@ -3924,20 +3926,20 @@ MonoBehaviour:
   showSaveLoad: 0
   active: 1
   Settings:
-    simulate: 0
+    simulate: 1
     secSerial: 0
     minSerial: 0
-    hourSerial: 8
+    hourSerial: 5
     daySerial: 21
     monthSerial: 3
     yearSerial: 2026
-    timeOfDay: 8
+    timeOfDay: 5
     latitude: 0
     longitude: 0
     utcOffset: 0
     cycleLengthInMinutes: 10
     dayLengthModifier: 1
-    nightLengthModifier: 1
+    nightLengthModifier: 2
     calenderType: 0
     daysInMonth: 10
     monthsInYear: 4
@@ -3946,7 +3948,7 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 82acdd278499d74498ad37dd931734d1, type: 2}
   showTimeControls: 1
   showLocationControls: 0
-  LST: 298.86017
+  LST: 253.73712
 --- !u!114 &4011421771873438716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3959,7 +3961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6910768c241d1924f921a3f44198cfe1, type: 3}
   m_Name: Aurora Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 1
+  showModuleInspector: 0
   showSaveLoad: 1
   active: 1
   Settings:
@@ -4037,7 +4039,7 @@ MonoBehaviour:
       playBackType: 1
       myAudioSource: {fileID: 0}
       loop: 1
-      volume: 1
+      volume: 0
       volumeCurve:
         serializedVersion: 2
         m_Curve:
@@ -4088,7 +4090,7 @@ MonoBehaviour:
       playBackType: 1
       myAudioSource: {fileID: 0}
       loop: 1
-      volume: 1
+      volume: 0
       volumeCurve:
         serializedVersion: 2
         m_Curve:
@@ -4389,13 +4391,13 @@ MonoBehaviour:
       m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
-    flatCloudsLightIntensity: 0.478
-    flatCloudsAmbientIntensity: 0.969
-    flatCloudsShadowIntensity: 0.6
+    flatCloudsLightIntensity: 0.932
+    flatCloudsAmbientIntensity: 1.319
+    flatCloudsShadowIntensity: 0.947
     flatCloudsShadowSteps: 8
     flatCloudsHGPhase: 0.8
-    flatCloudsCoverage: 1.189
-    flatCloudsDensity: 1
+    flatCloudsCoverage: 1.328
+    flatCloudsDensity: 1.104
     flatCloudsAltitude: 1
     flatCloudsTonemapping: 0
     flatCloudsBaseTiling: 1
@@ -4405,9 +4407,9 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 0fcdd472bd6a8ec429fc1e9bc978c4fa, type: 2}
   showCirrusCloudsControls: 0
   show2DCloudsControls: 0
-  cloudFlatBaseAnim: {x: -0.18847986, y: 0.7673801}
-  cloudFlatDetailAnim: {x: -0.94242996, y: -0.16311105}
-  cirrusAnim: {x: -0.09423993, y: 0.38369006}
+  cloudFlatBaseAnim: {x: 0.10585628, y: 0.4805512}
+  cloudFlatDetailAnim: {x: 0.52932787, y: 0.40257373}
+  cirrusAnim: {x: -0.9470729, y: -0.75949866}
 --- !u!114 &6137975383063632260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5083,7 +5085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccdfb360c52f049bf71126aa74826f, type: 3}
   m_Name: Weather Module
   m_EditorClassIdentifier: 
-  showModuleInspector: 0
+  showModuleInspector: 1
   showSaveLoad: 0
   active: 1
   Settings:
@@ -5106,7 +5108,7 @@ MonoBehaviour:
     environmentTransitionSpeed: 1
     audioTransitionSpeed: 1
   preset: {fileID: 11400000, guid: 8c4e279017d5e44458e3e4663b6ab460, type: 2}
-  targetWeatherType: {fileID: 11400000, guid: de555bbfb870a794d8ba3d0d8e68f475, type: 2}
+  targetWeatherType: {fileID: 11400000, guid: 11fdd63974de7ae44b1c689d499953f6, type: 2}
   weatherBlendProgress: 1
   globalAutoWeatherChange: 1
   triggerCollider: {fileID: 0}
@@ -5134,43 +5136,43 @@ MonoBehaviour:
     cloudsWindDirectionYModifier: 1
     windSpeedModifier: 0.05
     windUpwards: 0.025
-    coverage: 0.171
+    coverage: -0.08
     worleyFreq2: 48
     worleyFreq1: 12
-    dilateCoverage: 0.189
-    dilateType: 1
-    cloudsTypeModifier: 0.558
+    dilateCoverage: 0.757
+    dilateType: 0
+    cloudsTypeModifier: 0
     locationOffset: {x: 0.8, y: 0}
     bottomCloudsHeight: 2000
     topCloudsHeight: 8000
-    density: 1.3
-    densitySmoothness: 1.3
-    scatteringIntensity: 10
-    edgeHighlightStrength: 0.288
-    silverLiningSpread: 0.128
-    silverLiningIntensity: 0.128
+    density: 0.56
+    densitySmoothness: 1.712
+    scatteringIntensity: 7.11
+    edgeHighlightStrength: 0
+    silverLiningSpread: 0.092
+    silverLiningIntensity: 2
     lightningIntensity: 0
-    curlIntensity: 0.55
+    curlIntensity: 0.66
     lightStepModifier: 0.011
-    multiScatterStrength: 0.329
-    multiScatterFalloff: 0.302
-    ambientFloor: 0.196
-    absorbtion: 1.167
-    exposure: 2
+    multiScatterStrength: 0.367
+    multiScatterFalloff: 0.209
+    ambientFloor: 0.101
+    absorbtion: 0.207
+    exposure: 0.91
     baseNoiseUV: 48
     detailNoiseUV: 24
-    baseNoiseUVMultiplier: 0.35
-    detailNoiseUVMultiplier: 0.75
-    baseErosionIntensity: 0.018
-    baseNoiseMultiplier: 1.25
-    detailErosionIntensity: 0.2
+    baseNoiseUVMultiplier: 0.64
+    detailNoiseUVMultiplier: 1.09
+    baseErosionIntensity: 0.207
+    baseNoiseMultiplier: 1.28
+    detailErosionIntensity: 0.272
     detailNoiseMultiplier: 1
-    bottomShape: -0.14
-    midShape: -0.4
-    topShape: -0.16
+    bottomShape: 0.41
+    midShape: -1.72
+    topShape: -0.22
     topLayer: 0
-    cloudTypeShaping: 0.196
-    rampShape: 0.513
+    cloudTypeShaping: 0.097
+    rampShape: 0.141
   settingsGlobal:
     floatingPointOriginMod: {x: 0, y: 0, z: 0}
     cloudScrollOffset: {x: 0, y: 0, z: 0}
@@ -5300,8 +5302,8 @@ MonoBehaviour:
   showDensityControls: 0
   showTextureControls: 0
   showWindControls: 0
-  cloudAnimLayer1: {x: -0.94242996, y: -0.16311105, z: 0.93516827}
+  cloudAnimLayer1: {x: 0.52932787, y: 0.40257373, z: -0.5480523}
   cloudAnimLayer2: {x: 0, y: 0, z: 0}
-  cloudAnimNonScaledLayer1: {x: -0.00753926, y: 0.030695297, z: -0.8051715}
+  cloudAnimNonScaledLayer1: {x: -0.07576641, y: 0.099244125, z: -1.1560516}
   cloudAnimNonScaledLayer2: {x: 0, y: 0, z: 0}
   weatherMap: {fileID: 0}

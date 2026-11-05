@@ -541,7 +541,7 @@ MonoBehaviour:
     ambientIntensityModifier: 1
     ambientUpdateEveryFrame: 0
     ambientUpdateIntervall: 0.1
-    shadowIntensity: 0.996
+    shadowIntensity: 1
   preset: {fileID: 0}
   showDirectLightingControls: 0
   showAmbientLightingControls: 0

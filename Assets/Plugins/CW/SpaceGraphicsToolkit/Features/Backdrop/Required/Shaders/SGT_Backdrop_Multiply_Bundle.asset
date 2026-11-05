@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Backdrop_Multiply
   target: {fileID: 4800000, guid: 256e20f1519555b4d8a90e6db8378a8b, type: 3}
-  variantHash: 1677719188
-  projectHash: -284236704
+  variantHash: -1156734500
+  projectHash: 1614697743
   variants:
   - Pipe: 0
     Code: "//<HASH>1677719188</HASH>\n////////////////////////////////////////\n//
