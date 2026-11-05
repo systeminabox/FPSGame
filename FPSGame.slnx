@@ -1,10 +1,16 @@
 ﻿<Solution>
   <Project Path="Enviro3.Editor.csproj" />
+  <Project Path="SpaceGraphicsToolkit.Terrain.csproj" />
+  <Project Path="SpaceGraphicsToolkit.csproj" />
+  <Project Path="SpaceGraphicsToolkit.Galaxy.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Enviro3.Runtime.csproj" />
+  <Project Path="CW.Common.csproj" />
   <Project Path="Unity.StarterAssets.Editor.csproj" />
   <Project Path="Unity.StarterAssets.csproj" />
+  <Project Path="SpaceGraphicsToolkit.Nebula.csproj" />
   <Project Path="URPWizard.csproj" />
+  <Project Path="CW.ShaderBundle.csproj" />
   <Project Path="DynamicMusicHandlerEditor.csproj" />
   <Project Path="DynamicMusicHandler.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
