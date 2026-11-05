@@ -20,6 +20,9 @@ public class InputManager : Singleton<InputManager>
     public bool InteractInput { get; private set; }
     public bool PrimaryFireInput { get; private set; }        // held (full-auto)
     public bool PrimaryFireJustPressed { get; private set; }  // semi-auto
+    
+    public bool PrimaryFireReleased { get; private set; }
+    
     public bool SecondaryFireInput { get; private set; }
     public bool DebugInput { get; private set; }
 
@@ -116,6 +119,7 @@ public class InputManager : Singleton<InputManager>
         InteractInput = _interactAction.WasPressedThisFrame();
         PrimaryFireInput = _primaryFireAction.IsPressed();
         PrimaryFireJustPressed = _primaryFireAction.WasPressedThisFrame();
+        PrimaryFireReleased = _primaryFireAction.WasReleasedThisFrame();
         SecondaryFireInput = _secondaryFireAction.IsPressed();
         DebugInput = _debugAction.WasPerformedThisFrame();
     }
@@ -132,6 +136,7 @@ public class InputManager : Singleton<InputManager>
         InteractInput = false;
         PrimaryFireInput = false;
         PrimaryFireJustPressed = false;
+        PrimaryFireReleased = false;
         SecondaryFireInput = false;
         DebugInput = false;
     }

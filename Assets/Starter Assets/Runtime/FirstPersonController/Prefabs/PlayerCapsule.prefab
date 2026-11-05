@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 573710663313089538}
   - component: {fileID: 545194160195907033}
+  - component: {fileID: 6039670660465099375}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -250,7 +251,7 @@ MonoBehaviour:
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 90
   BottomClamp: -90
@@ -266,6 +267,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fd4b820f86bf94db281e365847df3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  interactRange: 5
+  interactRange: 7
   camera: {fileID: 0}
   prompt: {fileID: 0}
+--- !u!114 &6039670660465099375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5c9ada79204b96aba9c95ff38f0bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMine
+  mineCooldown: 0.5
+  interactRange: 10
+  mineDamage: 10
+  mineLayer:
+    serializedVersion: 2
+    m_Bits: 1024

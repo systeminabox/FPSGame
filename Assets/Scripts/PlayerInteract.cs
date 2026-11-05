@@ -26,9 +26,9 @@ public class PlayerInteract : MonoBehaviour
         Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, interactRange);
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.gameObject);
+//            Debug.Log(hit.collider.gameObject);
             var obj = hit.collider.gameObject.GetComponentInParent<Interactable>();
-            Debug.Log(obj);
+            //Debug.Log(obj);
             if (obj != null)
             {
                 inputPrompt.overrideText = true;
@@ -47,7 +47,7 @@ public class PlayerInteract : MonoBehaviour
                 else
                 {
                     prompt.SetActive(false);
-                    Debug.Log("No interactable found");
+                   // Debug.Log("No interactable found");
                 }
             }
         }
