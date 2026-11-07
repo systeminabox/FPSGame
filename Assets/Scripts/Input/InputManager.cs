@@ -90,6 +90,11 @@ public class InputManager : Singleton<InputManager>
             ClearGameplayInputs();
     }
 
+    public void SetPlayerCanMove(bool canMove)
+    {
+        GameManager.Instance.SetPlayerCanMove(canMove);
+    }
+
     private void Update()
     {
         UpdateInputs();

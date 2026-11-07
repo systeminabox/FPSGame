@@ -110,6 +110,7 @@ public class DebugLog: Singleton<DebugLog>
         
         EventSystem.current.SetSelectedGameObject(null);
         _debugConsole.gameObject.SetActive(false);
+        InputManager.Instance.SetPlayerCanMove(true);
         
     }
     public void OpenLog()
@@ -117,6 +118,7 @@ public class DebugLog: Singleton<DebugLog>
         _debugConsoleOpen = true;
         _debugConsole.gameObject.SetActive(true);
         EventSystem.current.SetSelectedGameObject(_debugConsoleFirstSelected);
+        InputManager.Instance.SetPlayerCanMove(false);
     }
 
     public static void PrintLog(string message, LogSeverity severity = LogSeverity.Log, Object messenger = null)

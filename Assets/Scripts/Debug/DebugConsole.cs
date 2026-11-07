@@ -21,10 +21,7 @@ public class DebugConsole : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        DebugLog.Instance.OnLogMessage += HandleMessage;
-    }
+   
 
     /// <summary>
     /// Uses reflection to find all public static methods with the DebugCommandAttribute.

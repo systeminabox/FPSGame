@@ -26,10 +26,16 @@ namespace Inventory
         {
             if(Instance.playerInventory != null)
             {
+                DebugLog.PrintLog("Player inventory size: " + Instance.playerInventory.items.Count);
                 foreach (var item in Instance.playerInventory.items)
                 {
                     DebugLog.PrintLog("Item: " + item.Key.name + " Count: " + item.Value + "");
                 }
+                
+            }
+            else
+            {
+                DebugLog.PrintLog("Player inventory is null");
             }
         }
     }

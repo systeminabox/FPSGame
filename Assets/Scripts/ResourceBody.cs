@@ -17,12 +17,14 @@ public class ResourceBody : BasicBody
         
     }
 
-    
-    
-    public void Pickup()
+
+    protected override void HandleDeath()
     {
         Debug.Log("Pickup");
         InventoryManager.Instance.playerInventory.AddItem(itemDefinition);
         Destroy(gameObject);
+        base.HandleDeath();
     }
+
+    
 }

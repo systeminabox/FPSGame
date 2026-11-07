@@ -45,13 +45,13 @@ public class DeviceState : Singleton<DeviceState>
             OnDeviceChange?.Invoke();
             if (CurrentDevice is Keyboard keyboard)
             {
-                DebugLog.PrintLog(keyboard.name);
+                //DebugLog.PrintLog(keyboard.name);
                 return;
             }
 
             if (CurrentDevice is Mouse mouse)
             {
-                DebugLog.PrintLog(mouse.name);
+                //DebugLog.PrintLog(mouse.name);
                 return;
             }
 
@@ -60,24 +60,24 @@ public class DeviceState : Singleton<DeviceState>
                 
                 if (CurrentDevice is XInputController)
                 {
-                    DebugLog.PrintLog("XInputController");
+                    //DebugLog.PrintLog("XInputController");
                     return;
                 }
                             
                 if (CurrentDevice is DualShockGamepad)
                 {
-                    DebugLog.PrintLog("DualShockGamepad");
+                    //DebugLog.PrintLog("DualShockGamepad");
                     return;
                 }
 
                 if (CurrentDevice is SwitchProController)
                 {
-                    DebugLog.PrintLog("SwitchProController");
+                    //DebugLog.PrintLog("SwitchProController");
                     return;
                 }
                             
-                DebugLog.PrintLog("Unknown Gamepad");
-                DebugLog.PrintLog(gamepad.name);
+                //DebugLog.PrintLog("Unknown Gamepad");
+                //DebugLog.PrintLog(gamepad.name);
             }
                         
         }

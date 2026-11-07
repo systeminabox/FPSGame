@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Starfield_Multiply
   target: {fileID: 4800000, guid: 342faac0620679e44a0ff63354c3fce2, type: 3}
-  variantHash: -1695827376
-  projectHash: -284236704
+  variantHash: -1577342094
+  projectHash: 1614697743
   variants:
   - Pipe: 0
     Code: "//<HASH>-1695827376</HASH>\n////////////////////////////////////////\n//

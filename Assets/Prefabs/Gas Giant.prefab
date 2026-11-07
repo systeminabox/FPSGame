@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab8d0037e014284ca8099008b3aab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMaterial: {fileID: 2100000, guid: 2d4369648019347469f64a3aa7abcb16, type: 2}
+  sourceMaterial: {fileID: 2100000, guid: f4d4154f4dd3c8143b273d495e415d16, type: 2}
   color: {r: 0.20914915, g: 0.9433962, b: 0.26355845, a: 1}
   brightness: 1
   mainTex: {fileID: 8900000, guid: b1928709487e786428bd5d21946f0645, type: 3}

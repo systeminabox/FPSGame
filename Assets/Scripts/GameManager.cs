@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
     public bool DidIntroPlay = false;
     
     public float PlayerHealth;
-    
+    [SerializeField] public bool playerCanMove = true;
+
     public void RegisterPlayer(GameObject player)
     {
         Player = player;
@@ -61,6 +62,12 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Player health changed to " + obj.Percent);
         PlayerHealth = obj.Percent;
+    }
+
+    public void SetPlayerCanMove(bool canMove)
+    {
+        Player.SendMessage( "SetCanMove", canMove);
+        playerCanMove = canMove;
     }
 
     

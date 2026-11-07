@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (InputManager.Instance.InteractInput)
         {
+            if(!GameManager.Instance.playerCanMove) return;
             Interact();
         }
         Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, interactRange);

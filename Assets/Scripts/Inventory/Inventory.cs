@@ -19,10 +19,12 @@ namespace Inventory
             if (items.ContainsKey(item))
             {
                 items[item]++;
+                Debug.Log("Item: " + item.name + " Count: " + items[item]);
             }
             else
             {
                 items.Add(item, 1);
+                Debug.Log("Item: " + item.name + " Count: " + items[item]);
             }
         }
 

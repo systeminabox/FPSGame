@@ -62,6 +62,7 @@ namespace StarterAssets
 
         private CharacterController _controller;
         private InputManager _input;
+        private bool _inputEnabled = true;
 
         private const float _threshold = 0.01f;
 
@@ -80,11 +81,13 @@ namespace StarterAssets
         {
             JumpAndGravity();
             GroundedCheck();
+            if (!_inputEnabled) return;
             Move();
         }
 
         private void LateUpdate()
         {
+            if (!_inputEnabled) return;
             CameraRotation();
         }
 
@@ -110,6 +113,11 @@ namespace StarterAssets
 
                 transform.Rotate(Vector3.up * _rotationVelocity);
             }
+        }
+        
+        public void SetCanMove(bool canMove)
+        {
+            _inputEnabled = canMove;
         }
 
         private void Move()
