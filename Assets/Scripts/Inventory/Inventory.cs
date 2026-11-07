@@ -7,7 +7,7 @@ namespace Inventory
 {
     public class Inventory : MonoBehaviour
     {
-        Dictionary<ItemDefinition, int> items = new Dictionary<ItemDefinition, int>();
+        public Dictionary<ItemDefinition, int> items = new Dictionary<ItemDefinition, int>(); 
         
         public int GetItemQuantity(ItemDefinition item)
         {

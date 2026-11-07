@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Jovian
   target: {fileID: 4800000, guid: 0879295d2b233f243838d4fe720c1337, type: 3}
-  variantHash: 318850816
-  projectHash: 1614697743
+  variantHash: 1181610702
+  projectHash: -284236704
   variants:
   - Pipe: 0
     Code: "//<HASH>1181610702</HASH>\n////////////////////////////////////////\n//

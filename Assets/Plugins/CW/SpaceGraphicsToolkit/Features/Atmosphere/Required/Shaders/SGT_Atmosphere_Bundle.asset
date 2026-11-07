@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Atmosphere
   target: {fileID: 4800000, guid: cf2b8f82252bd70479ee65a19d276925, type: 3}
-  variantHash: -41706083
-  projectHash: 1614697743
+  variantHash: -439501314
+  projectHash: -284236704
   variants:
   - Pipe: 0
     Code: "//<HASH>-439501314</HASH>\n////////////////////////////////////////\n//

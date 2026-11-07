@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Terrain Ocean
   target: {fileID: 4800000, guid: f7e867e638ebca24db1dedb16a1457aa, type: 3}
-  variantHash: 456700613
-  projectHash: 1614697743
+  variantHash: -483353667
+  projectHash: -284236704
   variants:
   - Pipe: 0
     Code: "//<HASH>-483353667</HASH>\n////////////////////////////////////////\n//

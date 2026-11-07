@@ -72,6 +72,8 @@ namespace StarterAssets
 
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+            
+            GameManager.Instance.RegisterPlayer(gameObject);
         }
 
         private void Update()

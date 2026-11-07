@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 3876683322050801534}
   - component: {fileID: 8199682927418407994}
   - component: {fileID: 3079938157869891183}
+  - component: {fileID: 4437433724419528641}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -837,6 +838,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d59345ff710449ebf88efd06f13f130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeviceState
+--- !u!114 &4437433724419528641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441165348120711343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7d04c4e5e84bff94bd8caac721668e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory.InventoryManager
+  itemDatabase: {fileID: 0}
+  playerInventory: {fileID: 0}
 --- !u!1 &7116198955397109863
 GameObject:
   m_ObjectHideFlags: 0

@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 573710663313089538}
   - component: {fileID: 545194160195907033}
   - component: {fileID: 6039670660465099375}
+  - component: {fileID: 1382487230943715785}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -288,3 +289,15 @@ MonoBehaviour:
   mineLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &1382487230943715785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81669ded781482fac9689659817d7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory.Inventory

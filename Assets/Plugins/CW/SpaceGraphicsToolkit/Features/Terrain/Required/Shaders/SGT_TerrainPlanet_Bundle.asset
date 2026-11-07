@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Space Graphics Toolkit/Terrain Planet
   target: {fileID: 4800000, guid: 768a73c8cfe57ab46943868314e13a32, type: 3}
-  variantHash: 195896396
-  projectHash: 1614697743
+  variantHash: 1395664247
+  projectHash: -284236704
   variants:
   - Pipe: 0
     Code: "//<HASH>1395664247</HASH>\n////////////////////////////////////////\n//
