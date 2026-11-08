@@ -55,7 +55,10 @@ public class GameManager : MonoBehaviour
     public void RegisterPlayer(GameObject player)
     {
         Player = player;
-        Player.GetComponent<BasicBody>().OnHealthChanged += UpdatePlayerHealth;
+        if(Player.GetComponent<BasicBody>())
+        {
+            Player.GetComponent<BasicBody>().OnHealthChanged += UpdatePlayerHealth;
+        }
     }
 
     private void UpdatePlayerHealth(HealthChangeInfo obj)
