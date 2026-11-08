@@ -131,7 +131,7 @@ public class BasicBody : MonoBehaviour
         
         if (deathSound)
         {
-            //AudioManager.Instance.PlaySfx(deathSound);
+            AudioManager.Instance.PlaySfx(deathSound);
         }
         
         Destroy(gameObject);
