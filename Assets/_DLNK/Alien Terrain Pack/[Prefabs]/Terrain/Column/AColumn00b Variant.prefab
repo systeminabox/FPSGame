@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 124284, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
@@ -68,8 +69,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2357924, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 55164208a06d77e45ba832d481caa179, type: 2}
+    - target: {fileID: 6455932, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 124284, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3304633040591744895}
   m_SourcePrefab: {fileID: 100100000, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
+--- !u!23 &4655744500629933814 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2357924, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
+  m_PrefabInstance: {fileID: 4655744500631958610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4655744500631900462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 124284, guid: 92f8ae0484074c241a29fcd76a87cb02, type: 3}
+  m_PrefabInstance: {fileID: 4655744500631958610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!205 &3304633040591744895
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655744500631900462}
+  serializedVersion: 3
+  m_LocalReferencePoint: {x: -0.2789421, y: 7.284278, z: -0.30357742}
+  m_Size: 64.54712
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4655744500629933814}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4655744500629933814}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4655744500629933814}
+  m_Enabled: 1
+  m_GlobalIlluminationLOD: 0
