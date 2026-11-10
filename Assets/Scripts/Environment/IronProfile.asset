@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f76be5a8a4480b81fa37016ed77e88, type: 3}
+  m_Name: IronProfile
+  m_EditorClassIdentifier: Assembly-CSharp::Environment.ResourceProfile
+  resource: {fileID: 11400000, guid: 42bbd413015202c4ea486370beb69970, type: 2}
+  resourcePrefab: {fileID: 6939334515954750439, guid: 9105c8ee44d864020875ac79598beffc, type: 3}
+  densityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.0031056094
+      outSlope: -0.0031056094
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.76666665
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  peakDensity: 20
+  minimumDistance: 10
+  gizmoColor: {r: 1, g: 0.27538368, b: 0, a: 0}
+  minSlope: 0
+  maxSlope: 90
+  minAltitude: 0
+  maxAltitude: 10000
+  alignToSurface: 1
+  sinkOffset: 0
+  minScale: 0.5
+  maxScale: 2

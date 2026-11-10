@@ -8,6 +8,8 @@ namespace Inventory
         [SerializeField] private int id;          // 0 = unassigned
         [SerializeField] private string displayName;
         [SerializeField] private Sprite icon;
+        [SerializeField] public Mesh resourceMesh;
+        [SerializeField] public Material[] resourceMaterials;
 
         public int ID => id;
         public string DisplayName => displayName;
