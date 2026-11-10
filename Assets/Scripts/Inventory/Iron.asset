@@ -15,3 +15,6 @@ MonoBehaviour:
   id: 2
   displayName: Iron Ore
   icon: {fileID: 0}
+  resourceMesh: {fileID: 289301614986012343, guid: af798c23408cdeb41bd094231b090be2, type: 3}
+  resourceMaterials:
+  - {fileID: 2100000, guid: 07b24a0a9f096d046b260c36bee4f1a4, type: 2}
