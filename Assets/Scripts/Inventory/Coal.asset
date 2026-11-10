@@ -15,3 +15,6 @@ MonoBehaviour:
   id: 1
   displayName: Carbon
   icon: {fileID: 0}
+  resourceMesh: {fileID: -3342148891536554772, guid: ac58ac97199df4f27a6c42791ee7c011, type: 3}
+  resourceMaterials:
+  - {fileID: 2100000, guid: 27079cb6423b44599a3823251459ad33, type: 2}
