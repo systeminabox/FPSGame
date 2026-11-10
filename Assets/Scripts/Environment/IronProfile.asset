@@ -42,8 +42,10 @@ MonoBehaviour:
   minimumDistance: 10
   gizmoColor: {r: 1, g: 0.27538368, b: 0, a: 0}
   minSlope: 0
-  maxSlope: 0
+  maxSlope: 90
   minAltitude: 0
-  maxAltitude: 0
-  alignToSurface: 0
+  maxAltitude: 10000
+  alignToSurface: 1
   sinkOffset: 0
+  minScale: 0.5
+  maxScale: 2
