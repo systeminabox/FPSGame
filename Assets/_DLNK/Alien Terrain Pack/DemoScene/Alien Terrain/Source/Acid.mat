@@ -97,7 +97,7 @@ Material:
     - _Falloff: -1.89
     - _FoamDepth: -6.6
     - _FoamFalloff: -0.73
-    - _FoamTiling: 2.41
+    - _FoamTiling: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -126,9 +126,9 @@ Material:
     - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorA: {r: 0.39037022, g: 0.9882353, b: 0.21960783, a: 1}
-    - _ColorB: {r: 0.040177934, g: 0.78867924, b: 0.2944938, a: 0.05490196}
-    - _ColorFoam: {r: 0.04651706, g: 0.2981131, b: 0.0061872466, a: 1}
+    - _ColorA: {r: 0.32156864, g: 0.38039216, b: 0.22745098, a: 0.7294118}
+    - _ColorB: {r: 0.1254902, g: 0.18431373, b: 0.09411765, a: 0.05490196}
+    - _ColorFoam: {r: 0.47058824, g: 0.5019608, b: 0.35686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecXYSnsZW: {r: 0.75, g: 0.72, b: 0.97, a: 0.28}
     - _VelocityXYFoamZ: {r: 0.01, g: -0.01, b: 0.04, a: 0.28}
