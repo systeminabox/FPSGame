@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-namespace StarterAssets
-{
+
     [RequireComponent(typeof(CharacterController))]
-    public class FirstPersonController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
@@ -212,5 +211,10 @@ namespace StarterAssets
 
             Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
         }
+        
+        public void WarpToPosition(Vector3 position, Vector3 CameraRotation)
+        {
+            transform.position = position;
+            transform.rotation = Quaternion.Euler(CameraRotation);
+        }
     }
-}

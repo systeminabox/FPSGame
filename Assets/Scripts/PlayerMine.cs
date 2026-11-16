@@ -45,6 +45,7 @@ public class PlayerMine: MonoBehaviour
                     if (resource != null)
                     {
                         resource.TakeDamage(mineDamage);
+                        resource.OnDeath += () => { currentTarget = null; };
                     }
                 }
             }

@@ -6,13 +6,13 @@ namespace Inventory
     public class InventoryManager : Singleton<InventoryManager>
     {
         public ItemDatabase itemDatabase;
-        public Inventory playerInventory;
+        public InventoryContainer playerInventoryContainer;
 
         private void Start()
         {
             if(GameManager.Instance.Player != null)
             {
-                playerInventory = GameManager.Instance.Player.GetComponent<Inventory>();
+                playerInventoryContainer = GameManager.Instance.Player.GetComponent<InventoryContainer>();
             }
         }
 
@@ -24,10 +24,10 @@ namespace Inventory
         [DebugCommand("getInventory")]
         private static void GetPlayerInventory()
         {
-            if(Instance.playerInventory != null)
+            if(Instance.playerInventoryContainer != null)
             {
-                DebugLog.PrintLog("Player inventory size: " + Instance.playerInventory.items.Count);
-                foreach (var item in Instance.playerInventory.items)
+                DebugLog.PrintLog("Player inventory size: " + Instance.playerInventoryContainer.items.Count);
+                foreach (var item in Instance.playerInventoryContainer.items)
                 {
                     DebugLog.PrintLog("Item: " + item.Key.name + " Count: " + item.Value + "");
                 }

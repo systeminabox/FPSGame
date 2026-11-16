@@ -25,6 +25,7 @@ public class InputManager : Singleton<InputManager>
     
     public bool SecondaryFireInput { get; private set; }
     public bool DebugInput { get; private set; }
+    public bool InventoryInput { get; private set; }
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -50,6 +51,7 @@ public class InputManager : Singleton<InputManager>
     private InputAction _secondaryFireAction;
     private InputAction _menuOpenCloseAction;
     private InputAction _debugAction;
+    private InputAction _inventoryAction;
 
     private InputSystemUIInputModule _uiModule;
     private bool _inputEnabled = true;
@@ -73,6 +75,7 @@ public class InputManager : Singleton<InputManager>
         _secondaryFireAction = _playerInput.actions["Secondary"];
         _menuOpenCloseAction = _playerInput.actions["MenuOpenClose"];
         _debugAction = _playerInput.actions["ToggleConsole"];
+        _inventoryAction = _playerInput.actions["Inventory"];
     }
 
     public void SetInputEnabled(bool enabled, bool allowPause = true)
@@ -127,6 +130,7 @@ public class InputManager : Singleton<InputManager>
         PrimaryFireReleased = _primaryFireAction.WasReleasedThisFrame();
         SecondaryFireInput = _secondaryFireAction.IsPressed();
         DebugInput = _debugAction.WasPerformedThisFrame();
+        InventoryInput = _inventoryAction.WasPerformedThisFrame();
     }
 
     private void ClearGameplayInputs()
@@ -144,6 +148,7 @@ public class InputManager : Singleton<InputManager>
         PrimaryFireReleased = false;
         SecondaryFireInput = false;
         DebugInput = false;
+        InventoryInput = false;
     }
 
     private void OnApplicationFocus(bool hasFocus)

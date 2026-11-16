@@ -46,6 +46,7 @@ public class BasicBody : MonoBehaviour
     
     
     public event Action<HealthChangeInfo> OnHealthChanged;
+    public event Action OnDeath;
 
     protected virtual void Awake()
     {
@@ -133,6 +134,7 @@ public class BasicBody : MonoBehaviour
         {
             AudioManager.Instance.PlaySfx(deathSound);
         }
+        OnDeath?.Invoke();
         
         Destroy(gameObject);
     }

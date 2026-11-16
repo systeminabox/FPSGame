@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Inventory
 {
-    public class Inventory : MonoBehaviour
+    public class InventoryContainer : MonoBehaviour
     {
         public Dictionary<ItemDefinition, int> items = new Dictionary<ItemDefinition, int>(); 
         

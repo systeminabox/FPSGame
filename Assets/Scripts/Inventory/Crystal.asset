@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Crystal
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
   id: 1
-  displayName: Carbon
-  icon: {fileID: 0}
+  displayName: Crystal Shard
+  icon: {fileID: 21300000, guid: 2ddcc9f3fbd4bed429e600446bd3b254, type: 3}
   resourceMesh: {fileID: 5400920406741244342, guid: dc0e2787584c34e20857f9a18a07590a, type: 3}
   resourceMaterials:
   - {fileID: 2100000, guid: 6f5d88cf8a84e4b739169f67a9d6f68a, type: 2}

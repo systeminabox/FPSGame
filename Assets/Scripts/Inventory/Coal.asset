@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
   id: 1
   displayName: Carbon
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: af239fb3c42e9e0448d6e2c042a36131, type: 3}
   resourceMesh: {fileID: -3342148891536554772, guid: ac58ac97199df4f27a6c42791ee7c011, type: 3}
   resourceMaterials:
   - {fileID: 2100000, guid: 27079cb6423b44599a3823251459ad33, type: 2}

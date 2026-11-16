@@ -37,8 +37,7 @@ public class ResourceBody : BasicBody
     protected override void HandleDeath()
     {
         Debug.Log("Pickup");
-        InventoryManager.Instance.playerInventory.AddItem(itemDefinition);
-        Destroy(gameObject);
+        InventoryManager.Instance.playerInventoryContainer.AddItem(itemDefinition);
         base.HandleDeath();
     }
 
