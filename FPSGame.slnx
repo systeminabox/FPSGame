@@ -9,9 +9,9 @@
   <Project Path="Unity.StarterAssets.Editor.csproj" />
   <Project Path="Unity.StarterAssets.csproj" />
   <Project Path="SpaceGraphicsToolkit.Nebula.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="URPWizard.csproj" />
   <Project Path="CW.ShaderBundle.csproj" />
   <Project Path="DynamicMusicHandlerEditor.csproj" />
   <Project Path="DynamicMusicHandler.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
