@@ -27,13 +27,20 @@ public class CraftingTerminalUI : MonoBehaviour
     void RefreshCraftingUI()
     {
         _playerInventoryContainer = InventoryManager.Instance.playerInventoryContainer;
+        if(!_playerInventoryContainer) Debug.LogError("No player inventory container found");
         if (playerInventoryUI)
         {
             var itemUIs = playerInventoryUI.GetComponentsInChildren<ItemUI>();
-            foreach (var itemUI in itemUIs)
+
+            if (itemUIs != null || itemUIs.Length > 0)
             {
-                Destroy(itemUI.gameObject);
+                foreach (var itemUI in itemUIs)
+                {
+                    Destroy(itemUI.gameObject);
+                }
             }
+            
+            
             
             foreach (var item in _playerInventoryContainer.items)
             {

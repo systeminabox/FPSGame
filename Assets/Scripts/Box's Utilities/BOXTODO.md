@@ -1,5 +1,5 @@
-- Resource gather (mining laser)
-- random resource spawning
+- Resource gather (mining laser) x
+- random resource spawning x
 - Items and inventory
 - Pilot ship
 - Ship generator
@@ -7,6 +7,7 @@
 - robots
 - music
 - scanner
+- sulfer springs shader
 
 
 

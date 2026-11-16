@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -59,6 +60,9 @@ public class GameManager : MonoBehaviour
         {
             Player.GetComponent<BasicBody>().OnHealthChanged += UpdatePlayerHealth;
         }
+        
+        InventoryManager.Instance.playerInventoryContainer = Player.GetComponent<InventoryContainer>();
+        
     }
 
     private void UpdatePlayerHealth(HealthChangeInfo obj)
