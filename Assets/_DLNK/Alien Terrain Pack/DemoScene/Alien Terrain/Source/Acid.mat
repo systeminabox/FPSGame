@@ -95,9 +95,9 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Falloff: -1.89
-    - _FoamDepth: -6.6
-    - _FoamFalloff: -0.73
-    - _FoamTiling: 1
+    - _FoamDepth: 0.63
+    - _FoamFalloff: -0.05
+    - _FoamTiling: 0.05
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

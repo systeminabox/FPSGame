@@ -18,28 +18,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.008333334
-      value: 0.41281182
-      inSlope: 0
-      outSlope: 0
+      time: 0
+      value: 1
+      inSlope: -0.0031056094
+      outSlope: -0.0031056094
       tangentMode: 0
-      weightedMode: 0
+      weightedMode: 3
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.76666665
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.0042326464
-      outSlope: -0.0042326464
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 1
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  peakDensity: 0.1
-  minimumDistance: 1
+  peakDensity: 5
+  minimumDistance: 30
   gizmoColor: {r: 1, g: 0.27538368, b: 0, a: 0}
   minSlope: 0
   maxSlope: 90
@@ -47,5 +47,5 @@ MonoBehaviour:
   maxAltitude: 10000
   alignToSurface: 1
   sinkOffset: 0
-  minScale: 0.9
-  maxScale: 2
+  minScale: 2
+  maxScale: 6
