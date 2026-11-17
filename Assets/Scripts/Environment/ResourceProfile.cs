@@ -1,3 +1,4 @@
+using System;
 using Inventory;
 using UnityEngine;
 
@@ -25,5 +26,13 @@ namespace Environment
         [Header("Layer 3")]
         public float minScale = 1f;
         public float maxScale = 1f;
+
+        private void OnValidate()
+        {
+            minimumDistance = Mathf.Max(minimumDistance, 1f);
+            
+            var max = .5f / (minimumDistance * minimumDistance);
+            peakDensity = Mathf.Clamp(peakDensity, 0f, max);
+        }
     }
 }

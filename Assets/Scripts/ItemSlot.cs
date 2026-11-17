@@ -5,23 +5,50 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    [SerializeField] Image image;
+    [SerializeField] Image itemImage;
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemQuantity;
+    public ItemDefinition Item { get; private set; }
     [SerializeField] private int quantity;
+    
+    private Button slotButton;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        slotButton = GetComponent<Button>();
+        slotButton.onClick.AddListener(HandleClick);
+        if (Item == null)
+        {
+            HideItem();
+        }
+    }
+
+    void HideItem()
+    {
+        itemImage.sprite = null;
+        itemName.text = "";
+        itemQuantity.text = "";
     }
 
     public void UpdateItem(ItemDefinition item, int quantityIn)
     {
+        if(item == null) return;
+        
         this.quantity = quantityIn;
-        if(image != null) image.sprite = item.Icon;
-        if(itemName != null) itemName.text = item.DisplayName;
-        if(itemQuantity != null) itemQuantity.text = quantity.ToString();
+        if (itemName != null) itemName.text = item.DisplayName;
+        if (itemQuantity != null)
+        {
+            if (quantity > 1) itemQuantity.text = quantity.ToString();
+            else itemQuantity.text = "";
+            
+        }
+        if (itemImage != null) itemImage.sprite = item.Icon;
+        
+    }
+
+    void HandleClick()
+    {
         
     }
 

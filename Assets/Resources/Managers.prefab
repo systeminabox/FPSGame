@@ -930,7 +930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.InventoryManager
   itemDatabase: {fileID: 11400000, guid: 072033d604657e14394c92accbb255a5, type: 2}
-  playerInventory: {fileID: 0}
+  craftingRecipeDatabase: {fileID: 11400000, guid: fa11f8cced9d047d7b3c731cdf4a7f53, type: 2}
+  playerInventoryContainer: {fileID: 0}
 --- !u!114 &1397472077546173339
 MonoBehaviour:
   m_ObjectHideFlags: 0

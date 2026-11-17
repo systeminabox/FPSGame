@@ -139,6 +139,7 @@ MonoBehaviour:
   itemName: {fileID: 5117245470204704199}
   itemImage: {fileID: 5498945185013707573}
   itemQuantity: {fileID: 1562658707534999207}
+  itemButton: {fileID: 4297138892849505453}
 --- !u!1 &5462761268496172275
 GameObject:
   m_ObjectHideFlags: 0

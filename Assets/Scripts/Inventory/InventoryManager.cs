@@ -6,6 +6,7 @@ namespace Inventory
     public class InventoryManager : Singleton<InventoryManager>
     {
         public ItemDatabase itemDatabase;
+        public CraftingRecipeDatabase craftingRecipeDatabase;
         public InventoryContainer playerInventoryContainer;
 
         private void Start()
