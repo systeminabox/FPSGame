@@ -39,5 +39,21 @@ namespace Inventory
                 DebugLog.PrintLog("Player inventory is null");
             }
         }
+
+        [DebugCommand("give", "give <item> <amount>")]
+        public static void GiveItem(string itemName, int amount = 1)
+        {
+            if (Instance.playerInventoryContainer != null)
+            {
+                if (Instance.itemDatabase != null)
+                {
+                    var item = Instance.itemDatabase.GetItem(itemName);
+                    if (item)
+                    {
+                        Instance.playerInventoryContainer.AddItem(item, amount);
+                    }
+                }
+            }
+        }
     }
 }

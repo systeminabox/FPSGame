@@ -22,6 +22,11 @@ namespace Inventory
             return item;
         }
 
+        public ItemDefinition GetItem(string itemName)
+        {
+            return items.Find(item => item.InternalName == itemName);
+        }
+
         private void BuildLookup()
         {
             lookup = new Dictionary<int, ItemDefinition>();

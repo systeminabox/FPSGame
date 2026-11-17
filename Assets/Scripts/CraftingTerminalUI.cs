@@ -20,6 +20,7 @@ public class CraftingTerminalUI : MonoBehaviour
     [SerializeField] private GameObject crafterInventoryUI;
     [SerializeField] private GameObject recipePickerUI;
     
+    
     private InventoryContainer _playerInventoryContainer;
     private bool open = false;
     
@@ -134,6 +135,14 @@ public class CraftingTerminalUI : MonoBehaviour
     {
         recipePickerUI.SetActive(false);
     }
+    
+    public void ClearRecipeSelection()
+    {
+        inputSlot1.UpdateItem(null,0);
+        inputSlot2.UpdateItem(null,0);
+        inputSlot3.UpdateItem(null,0);
+        outputSlot.UpdateItem(null,0);
+    }
 
     void RecipeBuilder()
     {
@@ -144,19 +153,42 @@ public class CraftingTerminalUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        var _items = InventoryManager.Instance.craftingRecipeDatabase.Recipes;
+        var recipes = InventoryManager.Instance.craftingRecipeDatabase.Recipes;
 
-        if (_items.Count > 0)
+        var playerItems = _playerInventoryContainer.items;
+        
+        if (recipes.Count > 0)
         {
-            foreach (var item in _items)
+            foreach (var craftingRecipe in recipes)
             {
+                //check if all inputs are in player inventory
+                bool allInputsInInventory = false;
+                
+                bool containsInput1 = false;
+                bool containsInput2 = false;
+                bool containsInput3 = false;
+                if(playerItems.ContainsKey(craftingRecipe.input1)) containsInput1 = true;
+                if(playerItems.ContainsKey(craftingRecipe.input2)) containsInput2 = true;
+                if (craftingRecipe.input3 != null)
+                {
+                    containsInput3 = playerItems.ContainsKey(craftingRecipe.input3);
+                }
+                else
+                {
+                    containsInput3 = true;
+                }
+                
+                allInputsInInventory = containsInput1 && containsInput2 && containsInput3;
+                
+                if(!allInputsInInventory) continue;
+                
                 var newItem = Resources.Load("PlayerItem") as GameObject;
                 var newItemInstance = Instantiate(newItem, recipeScrollRect.content.transform);
                 var itemUI = newItemInstance.GetComponent<ItemUI>();
                 
-                itemUI.itemButton.onClick.AddListener(() => SetTargetRecipe(item));
+                itemUI.itemButton.onClick.AddListener(() => SetTargetRecipe(craftingRecipe));
                 
-                itemUI.UpdateUI(item.output, 0);
+                itemUI.UpdateUI(craftingRecipe.output, 0);
                 
                 
                 
@@ -175,14 +207,33 @@ public class CraftingTerminalUI : MonoBehaviour
     {
         CloseRecipePicker();
         
-        inputSlot1.UpdateItem(recipe.input1,1);
-        inputSlot2.UpdateItem(recipe.input2,1);
+        //pull info from player inventory
+        
+        var playerinput1 = _playerInventoryContainer.items[recipe.input1];
+        var playerinput2 = _playerInventoryContainer.items[recipe.input2];
+        int playerinput3 = -1;
+        
+        inputSlot1.UpdateItem(recipe.input1,playerinput1);
+        inputSlot2.UpdateItem(recipe.input2,playerinput2);
 
+        int maxCraftable;
+        
         if (recipe.input3 != null)
         {
-            inputSlot3.UpdateItem(recipe.input3,1);
+            playerinput3 = _playerInventoryContainer.items[recipe.input3];
+            inputSlot3.UpdateItem(recipe.input3,playerinput3);
+            maxCraftable = Mathf.Min(playerinput1, playerinput2, playerinput3);
         }
-        outputSlot.UpdateItem(recipe.output,1);
+        else
+        {
+            inputSlot3.UpdateItem(null,0);
+            playerinput3 = 0;
+            maxCraftable = Mathf.Min(playerinput1, playerinput2);
+        }
+        
+        
+        
+        outputSlot.UpdateItem(recipe.output,maxCraftable);
         
     }
 }

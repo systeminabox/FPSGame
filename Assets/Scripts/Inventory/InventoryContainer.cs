@@ -14,26 +14,26 @@ namespace Inventory
             return items.ContainsKey(item) ? items[item] : 0;
         }
 
-        public void AddItem(ItemDefinition item)
+        public void AddItem(ItemDefinition item, int quantity = 1)
         {
             if (items.ContainsKey(item))
             {
-                items[item]++;
+                items[item] += quantity;
                 Debug.Log("Item: " + item.name + " Count: " + items[item]);
             }
             else
             {
-                items.Add(item, 1);
+                items.Add(item, quantity);
                 Debug.Log("Item: " + item.name + " Count: " + items[item]);
             }
         }
 
-        public bool RemoveItem(ItemDefinition item)
+        public bool RemoveItem(ItemDefinition item, int quantity = 1)
         {
             if (items.ContainsKey(item))
             {
-                if (items[item] - 1 <= 0) return false;
-                items[item]--;
+                if (items[item] - quantity <= 0) return false;
+                items[item] -= quantity;
                 return true;
             }
             return false;

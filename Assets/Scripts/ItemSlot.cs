@@ -33,7 +33,11 @@ public class ItemSlot : MonoBehaviour
 
     public void UpdateItem(ItemDefinition item, int quantityIn)
     {
-        if(item == null) return;
+        if (item == null)
+        {
+            HideItem();
+            return;
+        }
         
         this.quantity = quantityIn;
         if (itemName != null) itemName.text = item.DisplayName;
