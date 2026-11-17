@@ -38,8 +38,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  peakDensity: 20
-  minimumDistance: 10
+  peakDensity: 5
+  minimumDistance: 30
   gizmoColor: {r: 1, g: 0.27538368, b: 0, a: 0}
   minSlope: 0
   maxSlope: 90
@@ -47,5 +47,5 @@ MonoBehaviour:
   maxAltitude: 10000
   alignToSurface: 1
   sinkOffset: 0
-  minScale: 0.5
-  maxScale: 2
+  minScale: 2
+  maxScale: 6
