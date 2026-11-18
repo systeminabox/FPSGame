@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,10 @@ public class CraftingTerminalUI : MonoBehaviour
     private bool open = false;
     
     [SerializeField] private ScrollRect recipeScrollRect;
+    
+    [SerializeField] private bool isCrafting = false;
+    
+    private CraftingRecipe _targetRecipe;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -207,6 +212,9 @@ public class CraftingTerminalUI : MonoBehaviour
     {
         CloseRecipePicker();
         
+        if(recipe == null) return;
+        _targetRecipe = recipe;
+        
         //pull info from player inventory
         
         var playerinput1 = _playerInventoryContainer.items[recipe.input1];
@@ -235,5 +243,24 @@ public class CraftingTerminalUI : MonoBehaviour
         
         outputSlot.UpdateItem(recipe.output,maxCraftable);
         
+    }
+
+    public void Craft()
+    {
+        
+        if(_targetRecipe == null) return;
+        if (isCrafting) return;
+        
+        isCrafting = true;
+        StartCoroutine(CraftRoutine());
+        
+    }
+
+    private IEnumerator CraftRoutine()
+    {
+        progressBar.fillAmount = 0;
+        
+        
+        yield return null;
     }
 }

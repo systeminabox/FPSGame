@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Coal
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
   id: 1
-  displayName: Carbon
+  internalName: coal
+  displayName: Coal
   icon: {fileID: 21300000, guid: af239fb3c42e9e0448d6e2c042a36131, type: 3}
   resourceMesh: {fileID: -3342148891536554772, guid: ac58ac97199df4f27a6c42791ee7c011, type: 3}
   resourceMaterials:

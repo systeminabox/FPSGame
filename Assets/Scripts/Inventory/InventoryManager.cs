@@ -51,8 +51,21 @@ namespace Inventory
                     if (item)
                     {
                         Instance.playerInventoryContainer.AddItem(item, amount);
+                        DebugLog.PrintLog("Item added: " + itemName + " x " + amount);
+                    }
+                    else
+                    {
+                        DebugLog.PrintLog("Item not found: " + itemName + ". Item name must match internal name in database.", LogSeverity.Warning);
                     }
                 }
+                else
+                {
+                    DebugLog.PrintLog("Item database is null", LogSeverity.Error);
+                }
+            }
+            else
+            {
+                DebugLog.PrintLog("Player inventory is null", LogSeverity.Error);
             }
         }
     }

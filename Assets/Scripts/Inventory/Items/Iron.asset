@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
   id: 2
-  displayName: Iron Ore
+  internalName: iron
+  displayName: Iron
   icon: {fileID: 21300000, guid: 88f8010b0b924ef4c90e99b429022c32, type: 3}
   resourceMesh: {fileID: -5939956683182051913, guid: 35b55f79b8cbb452e8c1bdc2473c8f97, type: 3}
   resourceMaterials:
