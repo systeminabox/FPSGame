@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: '!CrawlerItemDatabase'
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDatabase
   items:
-  - {fileID: 11400000, guid: c728b66ce1b09464e8b26fd240d622f5, type: 2}
   - {fileID: 11400000, guid: 42bbd413015202c4ea486370beb69970, type: 2}
-  - {fileID: 11400000, guid: 45390947b5b2944e395ba5b7ca8b3c25, type: 2}
+  - {fileID: 11400000, guid: c728b66ce1b09464e8b26fd240d622f5, type: 2}
   - {fileID: 11400000, guid: e002be0c864ae4f7eb85d4a6b44aed49, type: 2}
+  - {fileID: 11400000, guid: b328d555ab2f650448514e637274ed0c, type: 2}
+  - {fileID: 11400000, guid: 45390947b5b2944e395ba5b7ca8b3c25, type: 2}
+  - {fileID: 11400000, guid: 947a0e4dd855ed241b03fb7214116195, type: 2}
   - {fileID: 11400000, guid: 8182961557bb63641a5fb90c0bbe76ca, type: 2}
   - {fileID: 11400000, guid: fb406681740a4114aabb4e6a398ef846, type: 2}
-  - {fileID: 11400000, guid: b328d555ab2f650448514e637274ed0c, type: 2}
   - {fileID: 11400000, guid: 77292ca4b2f54bd4982f73c56d2827ea, type: 2}
-  - {fileID: 11400000, guid: 947a0e4dd855ed241b03fb7214116195, type: 2}
   nextID: 10

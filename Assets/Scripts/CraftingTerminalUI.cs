@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Inventory;
 using TMPro;
-using UnityEditor;
 
 public class CraftingTerminalUI : MonoBehaviour
 {
@@ -29,7 +28,10 @@ public class CraftingTerminalUI : MonoBehaviour
     
     [SerializeField] private bool isCrafting = false;
     
+    [SerializeField] private float timePerCraft = 1f;
+    
     private CraftingRecipe _targetRecipe;
+    private int maxCraftable = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -217,18 +219,18 @@ public class CraftingTerminalUI : MonoBehaviour
         
         //pull info from player inventory
         
-        var playerinput1 = _playerInventoryContainer.items[recipe.input1];
-        var playerinput2 = _playerInventoryContainer.items[recipe.input2];
+        var playerinput1 = _playerInventoryContainer.items[recipe.input1]/recipe.input1Count;
+        var playerinput2 = _playerInventoryContainer.items[recipe.input2]/recipe.input2Count;
         int playerinput3 = -1;
         
         inputSlot1.UpdateItem(recipe.input1,playerinput1);
         inputSlot2.UpdateItem(recipe.input2,playerinput2);
 
-        int maxCraftable;
+        maxCraftable = 0;
         
         if (recipe.input3 != null)
         {
-            playerinput3 = _playerInventoryContainer.items[recipe.input3];
+            playerinput3 = _playerInventoryContainer.items[recipe.input3]/recipe.input3Count;
             inputSlot3.UpdateItem(recipe.input3,playerinput3);
             maxCraftable = Mathf.Min(playerinput1, playerinput2, playerinput3);
         }
@@ -247,20 +249,60 @@ public class CraftingTerminalUI : MonoBehaviour
 
     public void Craft()
     {
-        
+        Debug.Log("Checking if we can craft");
         if(_targetRecipe == null) return;
         if (isCrafting) return;
         
-        isCrafting = true;
-        StartCoroutine(CraftRoutine());
+        Debug.Log("Crafting");
         
+        isCrafting = true;
+        var maxTime = maxCraftable * timePerCraft;
+        StartCoroutine(CraftRoutine());
+        StartCoroutine(AnimateProgressBar(maxTime));
+        
+    }
+    
+    private IEnumerator AnimateProgressBar(float maxTime)
+    {
+        yield return null;
+        progressBar.fillAmount = 0;
+        var startTime = Time.time;
+        while (Time.time - startTime < maxTime)
+        {
+            progressBar.fillAmount = (Time.time - startTime) / maxTime;
+            yield return null;
+        }
+        progressBar.fillAmount = 1;
     }
 
     private IEnumerator CraftRoutine()
     {
-        progressBar.fillAmount = 0;
-        
-        
+        Debug.Log("Crafting on next frame");
         yield return null;
+
+        int quantityPerCraftInput1 = _targetRecipe.input1Count;
+        int quantityPerCraftInput2 = _targetRecipe.input2Count;
+        int quantityPerCraftInput3 = _targetRecipe.input3Count;
+        int quantityPerCraftOutput = _targetRecipe.outputCount;
+
+        for (int i = 0; i < maxCraftable; i++)
+        {
+            RefreshCraftingUI();
+            Debug.Log("Crafting item " + i);
+            yield return new WaitForSeconds(timePerCraft);
+            _playerInventoryContainer.RemoveItem(_targetRecipe.input1, quantityPerCraftInput1);
+            inputSlot1.UpdateItem(_targetRecipe.input1, _playerInventoryContainer.GetItemQuantity( _targetRecipe.input1));
+            _playerInventoryContainer.RemoveItem(_targetRecipe.input2, quantityPerCraftInput2);
+            inputSlot2.UpdateItem(_targetRecipe.input2, _playerInventoryContainer.GetItemQuantity( _targetRecipe.input2));
+            if (_targetRecipe.input3 != null)
+            {
+                _playerInventoryContainer.RemoveItem(_targetRecipe.input3, quantityPerCraftInput3);
+                inputSlot3.UpdateItem(_targetRecipe.input3, _playerInventoryContainer.GetItemQuantity( _targetRecipe.input3));
+            }
+            _playerInventoryContainer.AddItem(_targetRecipe.output, quantityPerCraftOutput);
+            RefreshCraftingUI();
+        }
+        RefreshCraftingUI();
+        isCrafting = false;
     }
 }

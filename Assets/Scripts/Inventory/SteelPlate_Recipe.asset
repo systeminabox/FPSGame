@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: SteelPlate_Recipe
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
   input1: {fileID: 11400000, guid: 42bbd413015202c4ea486370beb69970, type: 2}
+  input1Count: 1
   input2: {fileID: 11400000, guid: c728b66ce1b09464e8b26fd240d622f5, type: 2}
+  input2Count: 1
   input3: {fileID: 0}
+  input3Count: 1
   output: {fileID: 11400000, guid: 45390947b5b2944e395ba5b7ca8b3c25, type: 2}
+  outputCount: 1

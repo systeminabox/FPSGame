@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89b9b94a35542019ed5a57efa88a375, type: 3}
   m_Name: Chip
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
-  id: 5
+  id: 7
   internalName: computerChips
   displayName: Computer Chips
   icon: {fileID: 21300000, guid: 539d876d6ae9d384197ca74b8284494b, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89b9b94a35542019ed5a57efa88a375, type: 3}
   m_Name: WireScrap
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.ItemDefinition
-  id: 9
+  id: 6
   internalName: wireScrap
   displayName: Wire Scrap
   icon: {fileID: 21300000, guid: afa4be5c5ad8d4c40bf8926766afbdb3, type: 3}

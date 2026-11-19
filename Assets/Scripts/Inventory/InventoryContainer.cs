@@ -32,11 +32,18 @@ namespace Inventory
         {
             if (items.ContainsKey(item))
             {
-                if (items[item] - quantity <= 0) return false;
+                if (items[item] - quantity < 0) return false;
                 items[item] -= quantity;
+                
+                if (items[item] <= 0) items.Remove(item);
                 return true;
             }
             return false;
+        }
+        
+        public void ClearItems()
+        {
+            items.Clear();
         }
     }
 }
