@@ -27902,15 +27902,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7464565656194238644, guid: 75a29ae539dfc41c9a01cd7c8453851e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00019111086
+      value: -0.00019105668
       objectReference: {fileID: 0}
     - target: {fileID: 7464565656194238644, guid: 75a29ae539dfc41c9a01cd7c8453851e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00039680747
+      value: -0.00039871546
       objectReference: {fileID: 0}
     - target: {fileID: 7464565656194238644, guid: 75a29ae539dfc41c9a01cd7c8453851e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00027299332
+      value: -0.000270183
       objectReference: {fileID: 0}
     - target: {fileID: 7796881684916308946, guid: 75a29ae539dfc41c9a01cd7c8453851e, type: 3}
       propertyPath: m_Mesh
@@ -39064,26 +39064,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729781874336357471, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 20.000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 2418633265123224938, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.99999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2979467778745899926, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 57.153793
-      objectReference: {fileID: 0}
-    - target: {fileID: 2979467778745899926, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -9.382409e-14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2979467778745899926, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.0000018140902
-      objectReference: {fileID: 0}
     - target: {fileID: 3257991251046776465, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.268692
@@ -39124,21 +39104,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4708025946557412933, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 37.153793
-      objectReference: {fileID: 0}
-    - target: {fileID: 4708025946557412933, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.0000018140904
-      objectReference: {fileID: 0}
     - target: {fileID: 5551478020607371114, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
       propertyPath: m_Name
       value: Minerva_Exterior_RailgunVariant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8494229549903269565, guid: 6f878861e7bbbb64683f000ca74776ef, type: 3}
-      propertyPath: m_Name
-      value: =======CraftingTerminalColider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

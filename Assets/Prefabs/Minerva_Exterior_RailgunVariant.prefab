@@ -6379,7 +6379,7 @@ GameObject:
   - component: {fileID: 8742838143921528009}
   - component: {fileID: 1309745553015573884}
   m_Layer: 7
-  m_Name: CraftingTerminalColider
+  m_Name: =======CraftingTerminalColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11878,7 +11878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078440811496161540, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Name
-      value: Minerva_RampAirlock_Prefab
+      value: =======Minerva_RampAirlock_Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 2078440811496161540, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Layer
@@ -11887,6 +11887,14 @@ PrefabInstance:
     - target: {fileID: 2228678790721166612, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256172811890141463, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 37.153793
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256172811890141463, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.0000018140904
       objectReference: {fileID: 0}
     - target: {fileID: 2482528272235296077, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Layer
@@ -11984,6 +11992,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6069015215665382157, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20.000004
+      objectReference: {fileID: 0}
     - target: {fileID: 6107927600178317304, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -12040,9 +12052,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8593149255544489156, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 57.153793
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593149255544489156, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -9.382409e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593149255544489156, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.0000018140902
+      objectReference: {fileID: 0}
     - target: {fileID: 9176864104767414111, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190012525048476216, guid: a69905b3643b44e98a8ae118ef48b2f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.99999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

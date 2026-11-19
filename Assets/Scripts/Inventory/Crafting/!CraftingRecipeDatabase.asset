@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09d25d1f20724ffcaa3ae712fe882ede, type: 3}
-  m_Name: CraftingRecipeDatabase
+  m_Name: '!CraftingRecipeDatabase'
   m_EditorClassIdentifier: Assembly-CSharp::Inventory.CraftingRecipeDatabase
   _recipes:
+  - {fileID: 11400000, guid: 2c015f9413c594b5bbebfbc84be1fd87, type: 2}
+  - {fileID: 11400000, guid: ee27b3ebef2d242528b5850d47b25f7c, type: 2}
   - {fileID: 11400000, guid: 5e260582f793a40beb949b62eef6d075, type: 2}

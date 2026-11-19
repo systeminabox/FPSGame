@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca1687c12e4d4f2299cb81214b30468, type: 3}
+  m_Name: PowerCoil_Recipe
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
+  input1: {fileID: 11400000, guid: e002be0c864ae4f7eb85d4a6b44aed49, type: 2}
+  input1Count: 1
+  input2: {fileID: 11400000, guid: 947a0e4dd855ed241b03fb7214116195, type: 2}
+  input2Count: 1
+  input3: {fileID: 0}
+  input3Count: 1
+  output: {fileID: 11400000, guid: 77292ca4b2f54bd4982f73c56d2827ea, type: 2}
+  outputCount: 1
