@@ -4,7 +4,7 @@
 - Pilot ship
 - Ship generator
 - ship recharge mining tool
-- robots
+- !robots
 - music
 - scanner
 - sulfer springs shader
