@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 26ce77ee3e3a32a4bbdad806fd6ec075
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 358638
+  packageName: Sci-Fi Spherical Drone
+  packageVersion: 1.0
+  assetPath: Assets/DNLVStudio/Sci-Fi_Drone/Materials/Lens.mat
+  uploadId: 854652

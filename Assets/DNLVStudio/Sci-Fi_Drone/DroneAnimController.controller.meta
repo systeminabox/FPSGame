@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60a191ade1d6f7349b62ea6c381fcb34
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 358638
+  packageName: Sci-Fi Spherical Drone
+  packageVersion: 1.0
+  assetPath: Assets/DNLVStudio/Sci-Fi_Drone/DroneAnimController.controller
+  uploadId: 854652

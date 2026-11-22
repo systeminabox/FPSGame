@@ -43,6 +43,13 @@ public class BasicBody : MonoBehaviour
     private GameObject bar;
     public bool invulnerable = false;
     public AudioClip deathSound;
+    public DeathType deathType = DeathType.Destroy;
+
+    public enum DeathType
+    {
+        Destroy,
+        Disable,
+    }
     
     
     public event Action<HealthChangeInfo> OnHealthChanged;
@@ -58,7 +65,7 @@ public class BasicBody : MonoBehaviour
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         
         if (useUIBar && healthBar)
@@ -76,6 +83,12 @@ public class BasicBody : MonoBehaviour
 
 
         }
+    }
+
+    public void Initialize(float maxHealth)
+    {
+        this.maxHealth = maxHealth;
+        CurrentHealth = maxHealth;
     }
     
 
@@ -135,8 +148,15 @@ public class BasicBody : MonoBehaviour
             AudioManager.Instance.PlaySfx(deathSound);
         }
         OnDeath?.Invoke();
-        
-        Destroy(gameObject);
+
+        if (deathType == DeathType.Destroy)
+        {
+            Destroy(gameObject);
+        }
+        else if (deathType == DeathType.Disable)
+        {
+            gameObject.SetActive(false);
+        }
     }
     
     public float GetHealthPercent()

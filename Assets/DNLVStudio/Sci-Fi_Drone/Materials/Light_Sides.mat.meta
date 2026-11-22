@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa3a34660595ecb46816bebb14a1810e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 358638
+  packageName: Sci-Fi Spherical Drone
+  packageVersion: 1.0
+  assetPath: Assets/DNLVStudio/Sci-Fi_Drone/Materials/Light_Sides.mat
+  uploadId: 854652
