@@ -5,9 +5,9 @@ using UnityEngine;
 public class AutoDestroyPoolableObject : PoolableObject
 {
     public int AutoDestroyAfterSeconds = 5;
-    private const string DisableMethodName = "Disable";
+    protected const string DisableMethodName = "Disable";
 
-    public void OnEnable()
+    public virtual void OnEnable()
     {
         CancelInvoke(DisableMethodName);
         Invoke(DisableMethodName, AutoDestroyAfterSeconds);
@@ -15,6 +15,7 @@ public class AutoDestroyPoolableObject : PoolableObject
 
     public virtual void Disable()
     {
+        CancelInvoke(DisableMethodName);
         gameObject.SetActive(false);
     }
 }

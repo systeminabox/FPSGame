@@ -42,6 +42,7 @@ public class BasicBody : MonoBehaviour
     private GameObject _healthBarCanvas;
     private GameObject bar;
     public bool invulnerable = false;
+    public AudioClip hitSound;
     public AudioClip deathSound;
     public DeathType deathType = DeathType.Destroy;
 
@@ -115,6 +116,11 @@ public class BasicBody : MonoBehaviour
             CurrentHealth = 0;
             HandleDeath();
         }
+        else
+        {
+            AudioManager.Instance.PlaySfx(hitSound);
+        }
+        
         Debug.Log("Health: " + CurrentHealth);
         float newPercent = GetHealthPercent();
         OnHealthChanged?.Invoke(new HealthChangeInfo(newPercent,  newPercent - previousPercent, source));

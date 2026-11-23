@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 3079938157869891183}
   - component: {fileID: 4437433724419528641}
   - component: {fileID: 1397472077546173339}
+  - component: {fileID: 2792534776250368395}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -956,6 +957,18 @@ MonoBehaviour:
   clips: []
   musicCues: {fileID: 0}
   maxAudioDecks: 2
+--- !u!114 &2792534776250368395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441165348120711343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaf5df1f8693614ab00361c3ad42c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipManager
 --- !u!1 &6363955453633140333
 GameObject:
   m_ObjectHideFlags: 0

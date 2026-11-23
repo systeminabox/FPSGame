@@ -7,6 +7,7 @@ public class Enemy: PoolableObject
     public NavMeshAgent Agent;
     public BasicBody Body;
     public EnemyScriptableObject Config;
+    public AttackRadius AttackRadius;
 
     public virtual void OnEnable()
     {
@@ -34,6 +35,8 @@ public class Enemy: PoolableObject
         Agent.stoppingDistance = Config.StoppingDistance;
         
         Movement.updateSpeed = Config.AIPathUpdateInterval;
+        AttackRadius.damage = Config.damage;
+        AttackRadius.sphereCollider.radius = Config.attackRange;
         
         Body.Initialize(Config.health);
     }

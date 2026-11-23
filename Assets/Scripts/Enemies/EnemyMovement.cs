@@ -17,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     protected Animator animator;
 
+    public float turnSpeed = 4f;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -40,11 +42,48 @@ public class EnemyMovement : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(updateSpeed);
         while (enabled)
         {
-            _agent.SetDestination(target.position);
+            if(_agent.enabled)
+            {
+                _agent.SetDestination(target.position);
+            }
+            else
+            {
+                RotateTowardsTarget();
+            }
+            
             
             yield return wait;
         }
     }
+    
+    private void RotateTowardsTarget()
+    {
+        // Direction from the enemy to the target, flattened so it doesn't tilt up/down
+        Vector3 toTarget = target.position - transform.position;
+        toTarget.y = 0f;
+
+        if (toTarget.sqrMagnitude < 0.001f)
+        {
+            animator.SetFloat("Angular", 0f, 0.1f, Time.deltaTime);
+            return;
+        }
+
+        // Signed angle between where we face and where we want to face (-180 to 180)
+        float signedAngle = Vector3.SignedAngle(transform.forward, toTarget, Vector3.up);
+
+        // Rotate towards the target at a fixed turn speed (degrees per second)
+        Quaternion targetRotation = Quaternion.LookRotation(toTarget, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+
+        // Normalize to -1..1 (negative = turning left, positive = turning right)
+        float angular = Mathf.Clamp(signedAngle / 180f, -1f, 1f);
+
+        // The damp time smooths the value so the animator blend doesn't jitter
+        animator.SetFloat("Angular", angular, 0.1f, Time.deltaTime);
+    }
+
+    
 
     protected virtual void OnAttack()
     {

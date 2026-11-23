@@ -8,7 +8,10 @@ using UnityEngine.AI;
 public class EnemyScriptableObject : ScriptableObject
 {
     [Header("Enemy Stats")]
-    public int health;
+    public int health = 50;
+    public int damage = 5;
+    public float attackRange = 1f;
+    public bool IsRanged = false;
     
     [Header("Enemy NavMesh Agent")]
     
