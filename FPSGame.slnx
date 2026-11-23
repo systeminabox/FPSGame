@@ -1,9 +1,9 @@
 ﻿<Solution>
   <Project Path="Enviro3.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="SpaceGraphicsToolkit.Terrain.csproj" />
   <Project Path="SpaceGraphicsToolkit.csproj" />
   <Project Path="SpaceGraphicsToolkit.Galaxy.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Enviro3.Runtime.csproj" />
   <Project Path="CW.Common.csproj" />
   <Project Path="Unity.StarterAssets.Editor.csproj" />
