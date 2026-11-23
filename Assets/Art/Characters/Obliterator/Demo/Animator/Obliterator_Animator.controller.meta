@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c7d68f68fbac62245a8a09fbdb038824
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 256293
+  packageName: Obliterator - Heavy Battle Mech
+  packageVersion: 1.0
+  assetPath: Assets/Art/Characters/Obliterator/Demo/Animator/Obliterator_Animator.controller
+  uploadId: 594853
