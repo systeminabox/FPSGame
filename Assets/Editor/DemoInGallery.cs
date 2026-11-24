@@ -40,7 +40,9 @@ public class DemoInGallery : MonoBehaviour
                 break;
             case PlayModeStateChange.EnteredPlayMode:
                 //If we entered PlayMode and a Helper Object exists, we should use its position to initialize the PlayFromHere-Objects
-                if (GameManager.Instance.Player.GetComponent<PlayerController>())
+               if (GameManager.Instance != null &&
+    GameManager.Instance.Player != null &&
+    GameManager.Instance.Player.GetComponent<PlayerController>() != null)
                 {
                     var pos = SessionState.GetVector3("PlayerStartPosition", new Vector3());
                     if(pos != Vector3.zero)
