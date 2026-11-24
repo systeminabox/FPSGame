@@ -3521,6 +3521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3257991251046776465}
   - component: {fileID: 3364391132388650692}
+  - component: {fileID: 8467740744676930729}
   m_Layer: 7
   m_Name: Minerva_Exterior_RailgunVariant
   m_TagString: Untagged
@@ -3543,6 +3544,7 @@ Transform:
   m_Children:
   - {fileID: 4602251485125138315}
   - {fileID: 3777790391737032414}
+  - {fileID: 646304341498295876}
   - {fileID: 2330291837303733778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180.584, z: 0}
@@ -3558,7 +3560,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b6e20e7f3875f458f036b28a175428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cam: {fileID: 7166895116682480342}
+  CinemachineCameraTarget: {fileID: 9147618324626739712}
+  CinemachineCamera: {fileID: 7166895116682480342}
+  TopClamp: 90
+  BottomClamp: -90
+  LookSensitivity: 1
+  maxThrottle: 1
+  throttleIncrement: 0.1
+  moveSpeed: 10
+  turnSpeed: 10
+  LookRotationSpeed: 10
+--- !u!143 &8467740744676930729
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551478020607371114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5586035808394291085
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4371,7 @@ GameObject:
   - component: {fileID: 7166895116682480342}
   - component: {fileID: 5617249711912803189}
   - component: {fileID: 3596877487504969749}
+  - component: {fileID: 8182433497272275359}
   m_Layer: 7
   m_Name: Third Person Aim Camera
   m_TagString: Untagged
@@ -4355,7 +4392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2330291837303733778}
+  m_Father: {fileID: 3257991251046776465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7166895116682480342
 MonoBehaviour:
@@ -4444,6 +4481,19 @@ MonoBehaviour:
   IgnoreTag: 
   AimDistance: 200
   NoiseCancellation: 1
+--- !u!114 &8182433497272275359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470890460078818933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
+  Damping: 10
 --- !u!1 &6548637845837570591
 GameObject:
   m_ObjectHideFlags: 0
@@ -6877,8 +6927,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 646304341498295876}
+  m_Children: []
   m_Father: {fileID: 3257991251046776465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9150295823114926493

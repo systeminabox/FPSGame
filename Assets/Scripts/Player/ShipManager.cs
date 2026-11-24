@@ -16,7 +16,7 @@ public class ShipManager : Singleton<ShipManager>
     {
         ship = FindAnyObjectByType<ShipController>();
         weaponCam = GameObject.FindGameObjectWithTag("WeaponCam").GetComponent<Camera>();
-        shipCam = ship.cam;
+        shipCam = ship.CinemachineCamera;
         playerCam = GameObject.FindGameObjectWithTag("PlayerCam").GetComponent<CinemachineCamera>();
         brain = FindAnyObjectByType<CinemachineBrain>();
     }
@@ -34,6 +34,7 @@ public class ShipManager : Singleton<ShipManager>
             shipCam.Prioritize();
             ControllingShip = true;
             weaponCam.enabled = false;
+            InputManager.Instance.SetMode("Ship");
             Debug.Log("Switched to ship");
         }
         else
@@ -48,6 +49,7 @@ public class ShipManager : Singleton<ShipManager>
             {
                 yield return null;
             }
+            InputManager.Instance.SetMode("Player");
             weaponCam.enabled = true;
             Debug.Log("Switched to player");
         }

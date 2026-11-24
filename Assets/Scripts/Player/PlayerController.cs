@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Unity.Cinemachine;
+using UnityEngine;
 
 
-    [RequireComponent(typeof(CharacterController))]
-    public class PlayerController : MonoBehaviour
+    
+    public class PlayerController : Controller
     {
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
@@ -15,7 +16,7 @@
         public float SpeedChangeRate = 10.0f;
 
         [Space(10)]
-        [Tooltip("The height the player can jump")]
+        [Tooltip("The height the character can jump")]
         public float JumpHeight = 1.2f;
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
@@ -37,16 +38,6 @@
         [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
 
-        [Header("Cinemachine")]
-        [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
-        public GameObject CinemachineCameraTarget;
-        
-        
-        
-        [Tooltip("How far in degrees can you move the camera up")]
-        public float TopClamp = 90.0f;
-        [Tooltip("How far in degrees can you move the camera down")]
-        public float BottomClamp = -90.0f;
 
         // cinemachine
         private float _cinemachineTargetPitch;
@@ -62,16 +53,16 @@
         private float _fallTimeoutDelta;
         private float _jumpBufferDelta;
 
-        private CharacterController _controller;
-        private InputManager _input;
-        private bool _inputEnabled = true;
+        
+        
+        
 
         private const float _threshold = 0.01f;
 
         private void Start()
         {
-            _controller = GetComponent<CharacterController>();
-            _input = InputManager.Instance;
+            
+            
 
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
@@ -83,14 +74,14 @@
         {
             JumpAndGravity();
             GroundedCheck();
-            if (!_inputEnabled) return;
-            Move();
+            if (!InputEnabled) return;
+            Move(InputManager.MoveInput);
         }
 
         private void LateUpdate()
         {
-            if (!_inputEnabled) return;
-            CameraRotation();
+            if (!InputEnabled) return;
+            Look(InputManager.LookInput);
         }
 
         private void GroundedCheck()
@@ -99,15 +90,16 @@
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
         }
 
-        private void CameraRotation()
+        protected override void Look(Vector2 lookInput)
         {
-            if (_input.LookInput.sqrMagnitude >= _threshold)
+         
+            if (lookInput.sqrMagnitude >= _threshold)
             {
                 // Mouse delta is already per-frame; stick input needs deltaTime
-                float deltaTimeMultiplier = _input.LookIsFromMouse ? 1.0f : Time.deltaTime;
+                float deltaTimeMultiplier = InputManager.LookIsFromMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetPitch += _input.LookInput.y * RotationSpeed * deltaTimeMultiplier;
-                _rotationVelocity = _input.LookInput.x * RotationSpeed * deltaTimeMultiplier;
+                _cinemachineTargetPitch += lookInput.y * RotationSpeed * deltaTimeMultiplier * LookSensitivityInv;
+                _rotationVelocity = lookInput.x * RotationSpeed * deltaTimeMultiplier * LookSensitivityInv;
 
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
@@ -116,22 +108,21 @@
                 transform.Rotate(Vector3.up * _rotationVelocity);
             }
         }
+
         
-        public void SetCanMove(bool canMove)
+
+        
+
+        protected override void Move(Vector2 moveInput)
         {
-            _inputEnabled = canMove;
-        }
+            float targetSpeed = InputManager.SprintInput ? SprintSpeed : MoveSpeed;
 
-        private void Move()
-        {
-            float targetSpeed = _input.SprintInput ? SprintSpeed : MoveSpeed;
+            if (moveInput == Vector2.zero) targetSpeed = 0.0f;
 
-            if (_input.MoveInput == Vector2.zero) targetSpeed = 0.0f;
-
-            float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+            float currentHorizontalSpeed = new Vector3(CharacterController.velocity.x, 0.0f, CharacterController.velocity.z).magnitude;
 
             float speedOffset = 0.1f;
-            float inputMagnitude = _input.analogMovement ? _input.MoveInput.magnitude : 1f;
+            float inputMagnitude = InputManager.analogMovement ? moveInput.magnitude : 1f;
 
             if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
             {
@@ -145,12 +136,12 @@
 
             Vector3 inputDirection = Vector3.zero;
 
-            if (_input.MoveInput != Vector2.zero)
+            if (moveInput != Vector2.zero)
             {
-                inputDirection = transform.right * _input.MoveInput.x + transform.forward * _input.MoveInput.y;
+                inputDirection = transform.right * moveInput.x + transform.forward * moveInput.y;
             }
 
-            _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            CharacterController.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
         }
 
         private void JumpAndGravity()
@@ -167,7 +158,7 @@
                 }
 
                 // Jump
-                if (_input.JumpBeingHeld && _jumpTimeoutDelta <= 0.0f)
+                if (InputManager.JumpBeingHeld && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -198,12 +189,7 @@
             }
         }
 
-        private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
-        {
-            if (lfAngle < -360f) lfAngle += 360f;
-            if (lfAngle > 360f) lfAngle -= 360f;
-            return Mathf.Clamp(lfAngle, lfMin, lfMax);
-        }
+        
 
         private void OnDrawGizmosSelected()
         {
@@ -215,9 +201,12 @@
             Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
         }
         
+        //in here only for Crawler
+        #if UNITY_EDITOR   
         public void WarpToPosition(Vector3 position, Vector3 CameraRotation)
         {
             transform.position = position;
             transform.rotation = Quaternion.Euler(CameraRotation);
         }
+        #endif
     }

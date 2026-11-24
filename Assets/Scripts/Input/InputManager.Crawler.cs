@@ -46,6 +46,9 @@ public partial class InputManager
     public Vector2 ShipLookInput => cursorInputForLook ? ReadVector2("Ship/Look") : Vector2.zero;
     public bool ShipThrottleUpInput => WasPressedThisFrame("Ship/ThrottleUp");
     public bool ShipThrottleDownInput => WasPressedThisFrame("Ship/ThrottleDown");
+    public bool ShipCutThrottleInput => WasPressedThisFrame("Ship/CutThrottle");
+    public bool ShipMaxThrottleInput => WasPressedThisFrame("Ship/MaxThrottle");
+    
     
     public void SetPlayerCanMove(bool canMove)
     {
