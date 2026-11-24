@@ -1,31 +1,57 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 
-[DefaultExecutionOrder(-100)] // runs before gameplay scripts so they never read last frame's input
-public class InputManager : Singleton<InputManager>
+/// <summary>
+/// Project-agnostic input hub built on PlayerInput.
+///
+/// - One always-on "global" action map (menu, console, ...).
+/// - Any number of "control modes" (Player, Ship, Vehicle, ...), each bound to one action map.
+///   Only the current mode's map is enabled, so the other modes read as zero/false automatically.
+/// - Everything project-specific (map names, modes, start mode) is serialized.
+/// - Consumers either call the generic readers (IsPressed, ReadVector2, ...) with an action path
+///   such as "Player/Move", or use a per-project partial class (see InputManager.Crawler.cs)
+///   that exposes friendly properties on top of these readers.
+/// </summary>
+[RequireComponent(typeof(PlayerInput))]
+public partial class InputManager : Singleton<InputManager>
 {
-    public bool MenuOpenClosedInput { get; private set; }
+    [Serializable]
+    public class ControlMode
+    {
+        [Tooltip("Name used with SetMode().")]
+        public string id = "Player";
 
-    public Vector2 MoveInput { get; private set; }
-    public Vector2 LookInput { get; private set; }
+        [Tooltip("Action map that is enabled while this mode is active.")]
+        public string actionMap = "Player";
 
-    public bool JumpJustPressed { get; private set; }
-    public bool JumpBeingHeld { get; private set; }
-    public bool JumpReleased { get; private set; }
+        [Tooltip("Lock and hide the cursor while this mode is active.")]
+        public bool lockCursor = true;
+    }
 
-    public bool SprintInput { get; private set; }   // held
-    public bool DashInput { get; private set; }     // pressed this frame
-    public bool InteractInput { get; private set; }
-    public bool PrimaryFireInput { get; private set; }        // held (full-auto)
-    public bool PrimaryFireJustPressed { get; private set; }  // semi-auto
-    
-    public bool PrimaryFireReleased { get; private set; }
-    
-    public bool SecondaryFireInput { get; private set; }
-    public bool DebugInput { get; private set; }
-    public bool InventoryInput { get; private set; }
+    [Header("Action Maps")]
+    [Tooltip("Map that stays enabled in every mode (pause, console, ...). Leave empty if unused.")]
+    [SerializeField] private string globalActionMap = "Global";
+
+    [Header("Control Modes")]
+    [SerializeField] private List<ControlMode> modes = new List<ControlMode>
+    {
+        new ControlMode { id = "Player", actionMap = "Player", lockCursor = true },
+        new ControlMode { id = "Ship",   actionMap = "Ship",   lockCursor = true },
+    };
+
+    [Tooltip("Mode entered on Start. Leave empty to start with no mode active.")]
+    [SerializeField] private string startingMode = "Player";
+
+    [Tooltip("Frames the new mode's map stays disabled after a switch. Stops the button that caused " +
+             "the switch from also being read by the new mode in the same press. 0 = no lockout.")]
+    [SerializeField, Min(0)] private int switchLockoutFrames = 1;
+
+    [Header("Control Scheme")]
+    [Tooltip("Name of the PlayerInput control scheme that uses the mouse.")]
+    [SerializeField] private string mouseSchemeName = "KeyboardMouse";
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -37,51 +63,122 @@ public class InputManager : Singleton<InputManager>
     public PlayerInput PlayerInput => _playerInput;
 
     // Lets the controller decide whether to scale look by deltaTime
-    public bool LookIsFromMouse => _playerInput.currentControlScheme == "KeyboardMouse";
+    public bool LookIsFromMouse => _playerInput.currentControlScheme == mouseSchemeName;
+
+    /// <summary>Id of the active mode, or an empty string when no mode is active.</summary>
+    public string CurrentModeId => _currentMode != null ? _currentMode.id : string.Empty;
+
+    /// <summary>Raised on every mode change as (previousId, newId).</summary>
+    public event Action<string, string> ModeChanged;
 
     private PlayerInput _playerInput;
-
-    private InputAction _moveAction;
-    private InputAction _lookAction;
-    private InputAction _jumpAction;
-    private InputAction _sprintAction;
-    private InputAction _dashAction;
-    private InputAction _interactAction;
-    private InputAction _primaryFireAction;
-    private InputAction _secondaryFireAction;
-    private InputAction _menuOpenCloseAction;
-    private InputAction _debugAction;
-    private InputAction _inventoryAction;
-
     private InputSystemUIInputModule _uiModule;
+
+    private ControlMode _currentMode;
     private bool _inputEnabled = true;
-    private bool _allowPause = true;
+    private bool _allowGlobal = true;
+    private int _lockoutUntilFrame = -1; // -1 = no lockout active
+
+    private readonly Dictionary<string, InputAction> _actionCache = new Dictionary<string, InputAction>();
+    private readonly HashSet<string> _warned = new HashSet<string>();
 
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        SetupInputActions();
     }
 
-    private void SetupInputActions()
+    // Start (not Awake) so PlayerInput has already run its own OnEnable and enabled its default map;
+    // we then take over and enable exactly what we want.
+    private void Start()
     {
-        _moveAction = _playerInput.actions["Move"];
-        _lookAction = _playerInput.actions["Look"];
-        _jumpAction = _playerInput.actions["Jump"];
-        _sprintAction = _playerInput.actions["Sprint"];
-        _dashAction = _playerInput.actions["Roll"];
-        _interactAction = _playerInput.actions["Interact"];
-        _primaryFireAction = _playerInput.actions["Primary"];
-        _secondaryFireAction = _playerInput.actions["Secondary"];
-        _menuOpenCloseAction = _playerInput.actions["MenuOpenClose"];
-        _debugAction = _playerInput.actions["ToggleConsole"];
-        _inventoryAction = _playerInput.actions["Inventory"];
+        _currentMode = FindMode(startingMode);
+        if (!string.IsNullOrEmpty(startingMode) && _currentMode == null)
+            Debug.LogError($"InputManager: starting mode '{startingMode}' is not in the modes list.", this);
+
+        if (_currentMode != null)
+        {
+            cursorLocked = _currentMode.lockCursor;
+            SetCursorState(cursorLocked);
+        }
+
+        ApplyActionMaps();
     }
 
-    public void SetInputEnabled(bool enabled, bool allowPause = true)
+    private void Update()
+    {
+        if (_lockoutUntilFrame >= 0 && Time.frameCount >= _lockoutUntilFrame)
+        {
+            _lockoutUntilFrame = -1;
+            ApplyActionMaps();
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Modes
+    // ------------------------------------------------------------------
+
+    public bool IsMode(string id) => CurrentModeId == id;
+
+    /// <summary>
+    /// Switch control mode. Pass an empty string for "no mode" (only the global map stays live).
+    /// immediate skips the switch lockout.
+    /// </summary>
+    public bool SetMode(string id, bool immediate = false)
+    {
+        ControlMode next = null;
+        if (!string.IsNullOrEmpty(id))
+        {
+            next = FindMode(id);
+            if (next == null)
+            {
+                Debug.LogError($"InputManager: unknown control mode '{id}'.", this);
+                return false;
+            }
+        }
+
+        if (next == _currentMode)
+            return true;
+
+        string previous = CurrentModeId;
+        _currentMode = next;
+
+        _lockoutUntilFrame = (immediate || switchLockoutFrames <= 0)
+            ? -1
+            : Time.frameCount + switchLockoutFrames;
+
+        ApplyActionMaps();
+
+        if (next != null)
+        {
+            cursorLocked = next.lockCursor;
+            SetCursorState(cursorLocked);
+        }
+
+        ModeChanged?.Invoke(previous, CurrentModeId);
+        return true;
+    }
+
+    private ControlMode FindMode(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return null;
+        foreach (var mode in modes)
+            if (mode.id == id) return mode;
+        return null;
+    }
+
+    // ------------------------------------------------------------------
+    // Enable / disable
+    // ------------------------------------------------------------------
+
+    /// <summary>
+    /// Turn gameplay input on or off (menus, dialogue, cutscenes, camera blends).
+    /// While disabled, the current mode's map is off. The global map stays on if allowGlobal is true
+    /// so the player can still close a menu.
+    /// </summary>
+    public void SetInputEnabled(bool enabled, bool allowGlobal = true)
     {
         _inputEnabled = enabled;
-        _allowPause = allowPause;
+        _allowGlobal = allowGlobal;
 
         if (_uiModule == null)
             _uiModule = FindFirstObjectByType<InputSystemUIInputModule>(FindObjectsInactive.Include);
@@ -89,67 +186,94 @@ public class InputManager : Singleton<InputManager>
         if (_uiModule != null)
             _uiModule.enabled = enabled;
 
-        if (!enabled)
-            ClearGameplayInputs();
+        ApplyActionMaps();
     }
 
-    public void SetPlayerCanMove(bool canMove)
+    private void ApplyActionMaps()
     {
-        GameManager.Instance.SetPlayerCanMove(canMove);
+        if (_playerInput == null || _playerInput.actions == null)
+            return;
+
+        bool globalOn = _inputEnabled || _allowGlobal;
+        bool modeOn = _inputEnabled && _lockoutUntilFrame < 0;
+
+        var wanted = new HashSet<string>();
+        if (globalOn && !string.IsNullOrEmpty(globalActionMap))
+            wanted.Add(globalActionMap);
+        if (modeOn && _currentMode != null)
+            wanted.Add(_currentMode.actionMap);
+
+        if (!string.IsNullOrEmpty(globalActionMap))
+            SetMapEnabled(globalActionMap, wanted.Contains(globalActionMap));
+
+        foreach (var mode in modes)
+            SetMapEnabled(mode.actionMap, wanted.Contains(mode.actionMap));
     }
 
-    private void Update()
+    private void SetMapEnabled(string mapName, bool enable)
     {
-        UpdateInputs();
-    }
+        if (string.IsNullOrEmpty(mapName))
+            return;
 
-    private void UpdateInputs()
-    {
-        MenuOpenClosedInput = _allowPause && _menuOpenCloseAction.WasPerformedThisFrame();
-
-        if (!_inputEnabled)
+        var map = _playerInput.actions.FindActionMap(mapName, false);
+        if (map == null)
         {
-            ClearGameplayInputs();
+            WarnOnce($"map:{mapName}", $"InputManager: action map '{mapName}' not found in the Input Actions asset.");
             return;
         }
 
-        MoveInput = _moveAction.ReadValue<Vector2>();
-        LookInput = cursorInputForLook ? _lookAction.ReadValue<Vector2>() : Vector2.zero;
-        
-//        Debug.Log($"Move: {MoveInput}, Look: {LookInput}");
+        // Only touch maps whose state actually changes, so redundant calls never cancel held inputs.
+        if (map.enabled == enable)
+            return;
 
-        JumpJustPressed = _jumpAction.WasPressedThisFrame();
-        JumpBeingHeld = _jumpAction.IsPressed();
-        JumpReleased = _jumpAction.WasReleasedThisFrame();
-
-        SprintInput = _sprintAction.IsPressed();
-        DashInput = _dashAction.WasPressedThisFrame();
-        InteractInput = _interactAction.WasPressedThisFrame();
-        PrimaryFireInput = _primaryFireAction.IsPressed();
-        PrimaryFireJustPressed = _primaryFireAction.WasPressedThisFrame();
-        PrimaryFireReleased = _primaryFireAction.WasReleasedThisFrame();
-        SecondaryFireInput = _secondaryFireAction.IsPressed();
-        DebugInput = _debugAction.WasPerformedThisFrame();
-        InventoryInput = _inventoryAction.WasPerformedThisFrame();
+        if (enable) map.Enable();
+        else map.Disable();
     }
 
-    private void ClearGameplayInputs()
+    // ------------------------------------------------------------------
+    // Generic readers. Use "Map/Action" paths ("Player/Move") to avoid name clashes between maps.
+    // Actions in disabled maps return false / zero.
+    // ------------------------------------------------------------------
+
+    public InputAction GetAction(string actionPath)
     {
-        MoveInput = Vector2.zero;
-        LookInput = Vector2.zero;
-        JumpJustPressed = false;
-        JumpBeingHeld = false;
-        JumpReleased = false;
-        SprintInput = false;
-        DashInput = false;
-        InteractInput = false;
-        PrimaryFireInput = false;
-        PrimaryFireJustPressed = false;
-        PrimaryFireReleased = false;
-        SecondaryFireInput = false;
-        DebugInput = false;
-        InventoryInput = false;
+        if (string.IsNullOrEmpty(actionPath))
+            return null;
+
+        if (_actionCache.TryGetValue(actionPath, out var cached))
+            return cached;
+
+        if (_playerInput == null)
+            _playerInput = GetComponent<PlayerInput>();
+
+        var action = _playerInput.actions.FindAction(actionPath, false);
+        if (action == null)
+        {
+            WarnOnce($"action:{actionPath}", $"InputManager: action '{actionPath}' not found in the Input Actions asset.");
+            return null;
+        }
+
+        _actionCache[actionPath] = action;
+        return action;
     }
+
+    public bool IsPressed(string actionPath) => GetAction(actionPath)?.IsPressed() ?? false;
+    public bool WasPressedThisFrame(string actionPath) => GetAction(actionPath)?.WasPressedThisFrame() ?? false;
+    public bool WasReleasedThisFrame(string actionPath) => GetAction(actionPath)?.WasReleasedThisFrame() ?? false;
+    public bool WasPerformedThisFrame(string actionPath) => GetAction(actionPath)?.WasPerformedThisFrame() ?? false;
+
+    public Vector2 ReadVector2(string actionPath) => GetAction(actionPath)?.ReadValue<Vector2>() ?? Vector2.zero;
+    public float ReadFloat(string actionPath) => GetAction(actionPath)?.ReadValue<float>() ?? 0f;
+
+    private void WarnOnce(string key, string message)
+    {
+        if (_warned.Add(key))
+            Debug.LogWarning(message, this);
+    }
+
+    // ------------------------------------------------------------------
+    // Cursor
+    // ------------------------------------------------------------------
 
     private void OnApplicationFocus(bool hasFocus)
     {
