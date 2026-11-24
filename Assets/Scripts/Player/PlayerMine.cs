@@ -8,16 +8,16 @@ public class PlayerMine: MonoBehaviour
     
     private Coroutine mineCoroutine;
     [SerializeField]private float mineCooldown = 0.5f;
-    private Transform cameraTransform;
     [SerializeField]private float interactRange = 10f;
     private GameObject currentTarget;
     private float mineTimer;
     [SerializeField]private float mineDamage = 10f;
     [SerializeField]private LayerMask mineLayer;
+    [SerializeField] private Transform mineRoot;
 
     private void Start()
     {
-        cameraTransform = Camera.main.transform;
+        if(mineRoot == null) mineRoot = transform;
         mineTimer = mineCooldown;
     }
 
@@ -25,7 +25,7 @@ public class PlayerMine: MonoBehaviour
     {
         if (InputManager.Instance.PrimaryFireInput)
         {
-            var didHit = PhysicsHelper.Raycast(cameraTransform, cameraTransform.forward, interactRange, out RaycastHit hit, mineLayer);
+            var didHit = PhysicsHelper.Raycast(mineRoot, mineRoot.forward, interactRange, out RaycastHit hit, mineLayer);
             if (didHit)
             {
                 currentTarget = hit.collider.gameObject;
