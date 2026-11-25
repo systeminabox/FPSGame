@@ -929,6 +929,11 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathType: 1
+  itemsDroppedOnDeath:
+  - item: {fileID: 11400000, guid: 947a0e4dd855ed241b03fb7214116195, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 8182961557bb63641a5fb90c0bbe76ca, type: 2}
+    quantity: 1
 --- !u!135 &2604941682691354704
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 3767026434948243760}
   - component: {fileID: 1607995375225728636}
   - component: {fileID: 4130497892811333321}
-  - component: {fileID: 7667759721838544180}
   - component: {fileID: 691437225988162229}
   - component: {fileID: 9196021068584745746}
   m_Layer: 12
@@ -362,23 +361,14 @@ MonoBehaviour:
   useUIBar: 0
   healthBar: {fileID: 0}
   invulnerable: 0
+  hitSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathType: 0
---- !u!114 &7667759721838544180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818735747343372296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5eb068bb0a9481d8a175ce68fd54207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySightBehaviour
-  sightRange: 10
-  sightAngle: 30
-  sightCheckInterval: 0.1
+  itemsDroppedOnDeath:
+  - item: {fileID: 11400000, guid: 8182961557bb63641a5fb90c0bbe76ca, type: 2}
+    quantity: 10
+  - item: {fileID: 11400000, guid: 947a0e4dd855ed241b03fb7214116195, type: 2}
+    quantity: 10
 --- !u!135 &691437225988162229
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -415,6 +405,9 @@ MonoBehaviour:
   sphereCollider: {fileID: 691437225988162229}
   damage: 10
   attackDelay: 0.5
+  onVisionAnimation: OnVision
+  onLoseVisionAnimation: OnLoseVision
+  onAttackAnimation: OnAttack
   agent: {fileID: 5731792560696989069}
   bulletPrefab: {fileID: 6116786969350079688, guid: eaf4e0bc5d70a4446b2fa330f3392e8a, type: 3}
   bulletSpawnPoints:
@@ -424,6 +417,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sphereCastRadius: 0.1
+  MaxAmmo: 10
+  onReloadAnimation: OnReload
+  ReloadDelay: 1
 --- !u!1 &1896746895320693326
 GameObject:
   m_ObjectHideFlags: 0
