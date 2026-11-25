@@ -26,6 +26,8 @@ public class EnemyMovement : MonoBehaviour
 
         if (target == null)
         {
+            Debug.Log("Target is null, setting to player", gameObject);
+            Debug.Assert(GameManager.Instance.Player != null, "Player is null, cannot set target to player");
             target = GameManager.Instance.Player.transform;
         }
     }
