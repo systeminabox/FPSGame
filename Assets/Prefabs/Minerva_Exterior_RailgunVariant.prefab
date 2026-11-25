@@ -6564,6 +6564,7 @@ GameObject:
   - component: {fileID: 1360479587360445340}
   - component: {fileID: 8742838143921528009}
   - component: {fileID: 1309745553015573884}
+  - component: {fileID: 8348935556978921809}
   m_Layer: 7
   m_Name: =======CraftingTerminalColider
   m_TagString: Untagged
@@ -6647,10 +6648,34 @@ MonoBehaviour:
       m_Calls: []
   onActivateEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8348935556978921809}
+        m_TargetAssemblyTypeName: CraftingTerminal, Assembly-CSharp
+        m_MethodName: OpenCraftingUI
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDeactivateEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8348935556978921809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494229549903269565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e228ca24ffe8341a6b32ffc0a165e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingTerminal
 --- !u!1 &8671774135154219262
 GameObject:
   m_ObjectHideFlags: 0

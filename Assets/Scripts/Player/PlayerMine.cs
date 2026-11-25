@@ -15,6 +15,8 @@ public class PlayerMine: MonoBehaviour
     [SerializeField]private LayerMask mineLayer;
     [SerializeField] private Transform mineRoot;
 
+    [SerializeField] private LaserBeam laserBeam;
+    
     private void Start()
     {
         if(mineRoot == null) mineRoot = transform;
@@ -26,6 +28,9 @@ public class PlayerMine: MonoBehaviour
         if (InputManager.Instance.PrimaryFireInput)
         {
             var didHit = PhysicsHelper.Raycast(mineRoot, mineRoot.forward, interactRange, out RaycastHit hit, mineLayer);
+            laserBeam.SetActive(true);
+            laserBeam.UpdateSpline(mineRoot.position, mineRoot.position + mineRoot.forward * interactRange);
+            
             if (didHit)
             {
                 currentTarget = hit.collider.gameObject;
@@ -58,6 +63,7 @@ public class PlayerMine: MonoBehaviour
         {
             currentTarget = null;
             mineTimer = mineCooldown;
+            laserBeam.SetActive(false);
         }
     }
 

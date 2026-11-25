@@ -78,7 +78,7 @@ public class CraftingTerminalUI : MonoBehaviour
         {
             if(!open)
             {
-                OpenCraftingUI(true);
+                OpenPlayerInventory(true);
             }
             else
             {
@@ -88,7 +88,7 @@ public class CraftingTerminalUI : MonoBehaviour
         
     }
 
-    void OpenPlayerInventory(bool shouldOpen = true)
+    public void OpenPlayerInventory(bool shouldOpen = true)
     {
         panel.SetActive(shouldOpen);
         if (shouldOpen)
@@ -110,7 +110,7 @@ public class CraftingTerminalUI : MonoBehaviour
         
     }
 
-    void OpenCraftingUI(bool shouldOpen = true)
+    public void OpenCraftingUI(bool shouldOpen = true)
     {
         panel.SetActive(shouldOpen);
         if (shouldOpen)

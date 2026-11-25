@@ -15,9 +15,19 @@ public class ShipManager : Singleton<ShipManager>
     private void Start()
     {
         ship = FindAnyObjectByType<ShipController>();
-        weaponCam = GameObject.FindGameObjectWithTag("WeaponCam").GetComponent<Camera>();
-        shipCam = ship.CinemachineCamera;
-        playerCam = GameObject.FindGameObjectWithTag("PlayerCam").GetComponent<CinemachineCamera>();
+        
+        var wea = GameObject.FindGameObjectWithTag("WeaponCam");
+        if(wea != null)
+            weaponCam = wea.GetComponent<Camera>();
+        
+        if(ship != null)
+            shipCam = ship.CinemachineCamera;
+        
+        var playerCamGO = GameObject.FindGameObjectWithTag("PlayerCam");
+        if(playerCamGO != null)
+            playerCam = playerCamGO.GetComponent<CinemachineCamera>();
+        
+        
         brain = FindAnyObjectByType<CinemachineBrain>();
     }
 
@@ -29,6 +39,7 @@ public class ShipManager : Singleton<ShipManager>
 
     public IEnumerator SwitchControl(bool toShip)
     {
+        if(!ship) yield break;
         if (toShip)
         {
             shipCam.Prioritize();
