@@ -405,7 +405,7 @@ MonoBehaviour:
   CinemachineCamera: {fileID: 0}
   TopClamp: 90
   BottomClamp: -90
-  LookSensitivity: 20
+  LookSensitivity: 10
   MoveSpeed: 4
   SprintSpeed: 6
   RotationSpeed: 20

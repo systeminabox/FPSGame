@@ -23,6 +23,11 @@ public class EnemyMovement : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        if (target == null)
+        {
+            target = GameManager.Instance.Player.transform;
+        }
     }
 
     public void StartChasing()
