@@ -53,9 +53,13 @@ using UnityEngine;
         private float _fallTimeoutDelta;
         private float _jumpBufferDelta;
 
-        
-        
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            Debug.Log(GameManager.Instance);
+            GameManager.Instance.RegisterPlayer(gameObject);
+        }
 
         private const float _threshold = 0.01f;
 
@@ -66,8 +70,7 @@ using UnityEngine;
 
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
-            Debug.Log(GameManager.Instance);
-            GameManager.Instance.RegisterPlayer(gameObject);
+            
         }
 
         private void Update()
