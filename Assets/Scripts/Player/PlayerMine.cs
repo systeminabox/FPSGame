@@ -41,7 +41,7 @@ public class PlayerMine: MonoBehaviour
                 if (mineTimer <= 0)
                 {
                     mineTimer += mineCooldown;
-                    var resource = currentTarget.GetComponentInParent<ResourceBody>();
+                    var resource = currentTarget.GetComponentInParent<BasicBody>();
                     if (resource != null)
                     {
                         resource.TakeDamage(mineDamage);

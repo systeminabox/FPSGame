@@ -453,7 +453,7 @@ MonoBehaviour:
   mineDamage: 10
   mineLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
   mineRoot: {fileID: 6887132430673674605}
 --- !u!114 &1382487230943715785
 MonoBehaviour:
